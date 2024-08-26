@@ -1,0 +1,74 @@
+.header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #2E65A7;
+    justify-content: space-between;
+    font-size: 1vw;
+}
+
+.pugliaLogo {
+    position: absolute;
+    margin: 0 50%;
+    transform: translateX(-50%);
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    font-weight: 500;
+    color: white;
+}
+
+.socialBar {
+    display: flex;
+    gap: 30px;
+}
+
+.socialSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.socialSection img {
+    transition: transform 200ms linear;
+}
+
+.socialSection img:hover {
+    transform: scale(1.2);
+
+}
+
+.authSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logInLink {
+    color: white;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+}
+
+.registerLink {
+    background-color: var(--light-blue);
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--dark-blue);
+    transition: all 200ms ease-in-out
+}
+
+.logInLink:hover {
+    text-decoration: underline;
+}
+
+.registerLink:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
