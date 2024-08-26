@@ -4,7 +4,7 @@ import logoPuglia from '@/public/logoPuglia.svg'
 import styles from '@/styles/header.module.css'
 import facebookIcon from '@/public/facebookIcon.svg'
 import InstagramIcon from '@/public/instagramIcon.svg'
-import { Autour_One } from "next/font/google"
+import SearchBar from "./Searchbar"
 
 export default function Header() {
     return (
@@ -31,6 +31,10 @@ export default function Header() {
                 />
             </div>
             <div className={styles.socialBar}>
+
+                <SearchBar/>
+
+
                 <div className={styles.socialSection}>
                     <Link href={'facebook.com'}>
                         <Image
