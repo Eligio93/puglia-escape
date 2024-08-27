@@ -5,8 +5,10 @@ import styles from '@/styles/header.module.css'
 import facebookIcon from '@/public/facebookIcon.svg'
 import InstagramIcon from '@/public/instagramIcon.svg'
 import SearchBar from "./Searchbar"
+import AuthSection from "./AuthSection"
 
 export default function Header() {
+
     return (
         <header className={styles.header}>
             <nav>
@@ -32,11 +34,11 @@ export default function Header() {
             </div>
             <div className={styles.socialBar}>
 
-                <SearchBar/>
+                <SearchBar />
 
 
                 <div className={styles.socialSection}>
-                    <Link href={'facebook.com'}>
+                    <a target='_blank' href={'https://facebook.com'}>
                         <Image
                             src={facebookIcon}
                             alt='facebook icon'
@@ -47,7 +49,7 @@ export default function Header() {
                                 height: 'auto'
                             }}
                         />
-                    </Link>
+                    </a>
                     <Link href={'instagram.com'}>
                         <Image
                             src={InstagramIcon}
@@ -61,10 +63,7 @@ export default function Header() {
                         />
                     </Link>
                 </div>
-                <div className={styles.authSection}>
-                    <Link href='/login' className={styles.logInLink}>Login</Link>
-                    <Link href='/register' className={styles.registerLink}>Register</Link>
-                </div>
+                <AuthSection />
             </div>
 
         </header>
