@@ -8,6 +8,7 @@ const userSchema = new Schema({
     email: { type: String },
     password: { type: String },
     // comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    picture:{type:String},
     isAdmin:{type:Boolean}
 })
 
