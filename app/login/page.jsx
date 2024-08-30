@@ -3,28 +3,50 @@ import loginBackground from '@/public/loginBackground.jpg'
 import googleIcon from '@/public/googleIcon.svg'
 import Image from 'next/image'
 import styles from '@/styles/login.module.css'
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react'
+import { Suspense, useEffect } from 'react'
+import Loading from '../loading'
+import { useRouter } from 'next/navigation'
 
 
 export default function Login() {
+    const router = useRouter()
+    const session = useSession()
+    useEffect(() => {
+        if (session.status === 'authenticated') {
+            router.push('/')
+        }
+    }, [session])
+
+    //when getting the session, initally the status is loading so to avoid that the page render and then redirect i used this conditional
+    if (session.status === 'loading') {
+        return <Loading />
+    }
+
     async function handleGoogleLogin(e) {
         e.preventDefault();
-        await signIn('google')
-        redirect
-        console.log(response)
-
+        await signIn('google', {
+        })
+        router.back();
     }
     async function handleCredentialsLogin(e) {
         e.preventDefault();
-        const email = 'ciaociao'
-        const password = 'miao123'
-        const response = await signIn('credentials', {
+        const email = 'eligio.cristantielli@gmail.com';
+        const password = 'ciaociao'
+        const res = await signIn('credentials', {
             redirect: false,
+            callbackUrl: router.back(),
             email: email,
             password: password
         })
-        console.log(response)
+        //if res.error
+        //'Invalid Credentials
+        //if res.url
+        //redirect to the previous page
     }
+    // if (session.status === 'authenticated') {
+    //     return router.back()
+    // }
     return (
         <div className={styles.login}>
             <div className={styles.loginContainer}>
