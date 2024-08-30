@@ -4,12 +4,13 @@ import googleIcon from '@/public/googleIcon.svg'
 import Image from 'next/image'
 import styles from '@/styles/login.module.css'
 import { signIn, useSession } from 'next-auth/react'
-import { Suspense, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Loading from '../loading'
 import { useRouter } from 'next/navigation'
 
 
 export default function Login() {
+    const [error, setError] = useState()
     const router = useRouter()
     const session = useSession()
     useEffect(() => {
@@ -24,10 +25,10 @@ export default function Login() {
     }
 
     async function handleGoogleLogin(e) {
+        //need to set the callbackUrl to redirect the user to the page before the loginPage
         e.preventDefault();
-        await signIn('google', {
-        })
-        router.back();
+        await signIn('google')
+
     }
     async function handleCredentialsLogin(e) {
         e.preventDefault();
@@ -35,18 +36,22 @@ export default function Login() {
         const password = 'ciaociao'
         const res = await signIn('credentials', {
             redirect: false,
-            callbackUrl: router.back(),
             email: email,
-            password: password
-        })
-        //if res.error
-        //'Invalid Credentials
-        //if res.url
-        //redirect to the previous page
+            password: password,
+        },
+        )
+        console.log(res)
+        if (res.error) {
+            setError(res.error)
+            setTimeout(() => {
+                setError()
+            }, 2000)
+        } else {
+            console.log('ciao')
+            router.back()
+        }
+
     }
-    // if (session.status === 'authenticated') {
-    //     return router.back()
-    // }
     return (
         <div className={styles.login}>
             <div className={styles.loginContainer}>
@@ -59,6 +64,7 @@ export default function Login() {
                 />
                 <form action="" className={styles.form} onSubmit={handleCredentialsLogin}>
                     <h2>Log in to your account</h2>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <label htmlFor="login-email">Email:</label>
                     <input type="email" name="email" id="login-email" />
                     <label htmlFor="login-password">Password:</label>
