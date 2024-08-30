@@ -35,29 +35,42 @@ export const authOptions = {
                     if (matchingPassword) {
                         return user
                     }
-                    return null
-
+                    throw new Error('Invalid email and/or password')
                 }
-                return null
-
+               throw new Error('Email is invalid')
             }
         })
     ],
     callbacks: {
-        async jwt({ token, user }) {
-            //from the user object returned from authorize, store info in token
-            if (user) {
+        async jwt({ token, user, account }) {
+            console.log('ACCOUNT', account)
+            console.log('USERJWT', user)
+            console.log('TOKENJWT', token)
+            if (account && account.provider === 'google') {
+
+                //mettere logica di inserire l'user su DB e dare l'iD al token
+                //mettere subito le informazioni che ci servono nel token
+                return token
+            }
+            if (account && account.provider == 'credentials') {
+                //mettere le informazioni che ci servono nel token
                 token.userId = user._id
-                token.userPicture = user.picture
+                token.picture = user.picture
                 token.isAdmin = user.isAdmin
             }
+
             return token
         },
-        async session({ session, token }) {
+
+        async session({ session, token, user }) {
+            console.log('SESSION', session)
+            console.log('TOKEn', token)
+            console.log('USER', user)
             //get the info about the user from the token 
+
             if (token) {
                 session.user.userId = token.userId
-                session.user.image = token.userPicture
+                session.user.image = token.picture
                 session.user.isAdmin = token.isAdmin
             }
             return session
