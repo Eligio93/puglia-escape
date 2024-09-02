@@ -1,0 +1,8 @@
+.register{
+    width: 100%;
+    height: calc(100vh - 90px);
+}
+
+.register .registerContainer{
+   border:2px solid yellow
+}

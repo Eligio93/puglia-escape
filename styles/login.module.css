@@ -1,45 +1,79 @@
-.login {
-    width: 70%;
-    height: calc(100% - 90px);
+.login,
+.register {
+    position:relative;
     display: flex;
-    margin: 0 auto;
+    justify-content: center;
+    justify-items: center;
     padding: 50px;
+    height: calc(100vh - 90px);
+    background-color: var(--dark-blue);
+
 }
 
-.loginImg {
+.loginContainer,
+.registerContainer {
+    display: flex;
+    width: 70%;
+    box-shadow: 5px 5px 15px 5px var(--dark-blue);
+    border-radius: 10px;
+}
+
+.loginImg,
+.registerImg {
     width: 50%;
     height: auto;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
+
 }
 
-.login form {
+.login form,
+.register form {
     width: 50%;
-    color: white;
+    /* color: white; */
+    color: var(--dark-blue);
     padding: 80px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: var(--orange);
+    /* background-color: var(--orange); */
+    background-color: white;
     border-radius: 0 10px 10px 0;
 }
 
-.login form label {
-    font-weight: bold;
-}
-
-.login form input:focus {
+.login form input:focus,
+.register form input:focus {
     box-shadow: 0px 0px 3px 5px var(--light-orange);
 }
 
-.login form h2 {
+.login form h2,
+.register form h2 {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
-.login button {
+.login input {
+    height: 3rem;
+    font-size: 20px
+}
+
+.register input {
+    font-size: 15px;
+}
+
+.login input[type='password'],
+.register input[type='password'] {
+    font-size: 15px
+}
+
+
+.login button,
+.register button {
     margin-top: 10px;
+    height: 3rem;
+    font-size: 20px;
+    border-radius: 50px;
 }
 
 .divider {
@@ -53,7 +87,7 @@
 
 .divider::before {
     content: "";
-    background: white;
+    background: var(--dark-blue);
     position: absolute;
     left: 0;
     top: 50%;
@@ -62,8 +96,8 @@
 }
 
 .divider::after {
-    background-color: var(--orange);
-    color: white;
+    background-color: white;
+    color: var(--dark-blue);
     font-weight: 600;
     content: attr(data-content);
     line-height: 1.5em;
@@ -77,14 +111,5 @@
     align-items: center;
     gap: 20px;
     padding: 10px;
-    /* font-size: 15px; */
-    font-weight: 600;
     border-radius: 5px;
-}
-
-@media screen and (max-width:1300px) {
-    .login{
-        width:100%;
-    }
-    
 }
