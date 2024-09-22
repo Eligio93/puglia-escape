@@ -7,7 +7,9 @@ import styles from '@/styles/searchbar.module.css'
 export default function SearchBar() {
     return (
         <form className={styles.searchbar}>
-            <input type="text" />
+            <label htmlFor="searchBar">
+            <input type="text" name='searchValue' id='searchBar'/>
+            </label>
             <button className={styles.searchBtn} type='submit' onClick={() => alert('ciao')}>
                 <Image
                     src={searchIcon}
