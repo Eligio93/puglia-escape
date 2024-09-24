@@ -16,7 +16,7 @@ export default async function LatestBlogPosts() {
 
     return (
         <section className={styles.latestBlogPosts}>
-            <h2>Our Latest News From Puglia</h2>
+            <h2>Latest Blog Posts from Puglia</h2>
             <Carousel
                 posts={response.items}
             />
