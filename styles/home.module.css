@@ -30,6 +30,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 30px;
     gap: 30px;
     margin-bottom: 30px;
@@ -37,18 +38,24 @@
 
 .home h2 {
     text-align: center;
-    font-size: 54px;
+    font-size: 48px;
     color: var(--dark-blue);
     font-weight: bold;
 }
 
 .categoriesContainer p {
-    font-size: 35px;
-    width: 100%;
+    font-size: 24px;
+    width: 70%;
     text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--dark-blue);
+    /* border-bottom: 1px solid var(--dark-blue); */
     color: var(--blue);
+    font-style: italic;
+}
+
+.categoriesContainer hr {
+    width: 100%;
+    border: 1px solid var(--dark-blue);
+    margin-bottom: 20px;
 }
 
 .categories {
@@ -65,7 +72,15 @@
     height: 400px;
     box-shadow: 5px 5px 15px 5px var(--dark-blue);
     overflow: hidden;
+}
 
+.cover {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-blue);
+    opacity: 0.4;
 }
 
 .category:hover img {
@@ -89,6 +104,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
     /* background:rgba(45, 15, 13,1); */
 }
 
@@ -144,10 +160,161 @@
     justify-content: center;
     gap: 30px;
     margin: 0 auto;
+}
 
+.carouselPostInfo {
+    width: 50%;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    color: white;
+
+}
+
+.carouselPostInfo p:nth-of-type(1) {
+    background-color: var(--dark-blue);
+    border-radius: 0 10px 0 0;
+    color: white;
+    height: 40%;
+    font-size: 36px;
+    padding: 20px;
+    border-bottom: 1px solid var(--blue);
+}
+
+.carouselPostInfo p:nth-of-type(2) {
+    padding: 20px;
+    height: 60%;
+    font-size: 24px;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 
 .embla__container :global(.is-snapped) {
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+.homeInfo {
+    display: flex;
+    min-height: 400px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: var(--blue);
+    gap: 50px;
+}
+
+.infoItem {
+    display: flex;
+    align-self: auto;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    gap: 10px;
+}
+
+.infoItem img {
+    width: 80px;
+    height: 80px;
+}
+
+.infoItem p:nth-of-type(2) {
+    color: white;
+    font-size: 24px;
+    height: 50px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.infoItem p:nth-of-type(1) {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.favouriteCities {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.citiesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 150px);
+}
+
+.citiesGrid a {
+    position: relative;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.citiesGrid a:hover {
+    cursor: pointer;
+}
+
+.citiesGrid a p {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    background-color: var(--dark-blue);
+    color: white;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.citiesGrid img {
+    border-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.citiesGrid a:hover img,
+.citiesGrid a:hover p {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    ;
+}
+
+.gridItemLecce {
+    position: relative;
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.gridItemMonopoli {
+    position: relative;
+    grid-column: 3/6;
+    grid-row: 1/3;
+}
+
+.gridItemPolignano {
+    grid-column: 1/4;
+    grid-row: 3/5;
+}
+
+.gridItemGallipoli {
+    grid-column: 4/6;
+    grid-row: 3/5;
+}
+
+.gridItemBari {
+    grid-column: 1/3;
+    grid-row: 5/7;
+}
+
+.gridItemOstuni {
+    grid-column: 3/6;
+    grid-row: 5/7;
 }
