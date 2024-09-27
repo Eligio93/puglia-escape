@@ -34,7 +34,11 @@ export default function EmblaCarousel({ posts }) {
                             height={post.fields.mainImage.fields.file.details.image.height}
                             width={post.fields.mainImage.fields.file.details.image.width}
                         />
-                        {post.fields.postTitle}
+                        <div className={styles.carouselPostInfo}>
+                            <p>{post.fields.postTitle}</p>
+                            <p>{post.fields.postDescription}</p>
+                        </div>
+                        
                     </div>)}
                 </div>
             </div>
