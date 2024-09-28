@@ -1,5 +1,6 @@
 'use client'
 import { useSearchParams, useRouter } from "next/navigation"
+import styles from '@/styles/blog.module.css'
 
 
 export default function FilterBar({ tags }) {
@@ -19,7 +20,12 @@ export default function FilterBar({ tags }) {
     function setCategory(category) {
         const currentQuery = new URLSearchParams(searchParams.toString());
         //adds or updates the category
-        currentQuery.set('category', category);
+        if (category) {
+            currentQuery.set('category', category);
+        } else {
+            currentQuery.delete('category');
+        }
+
         router.push(`/blog?${currentQuery.toString()}`);
     }
 
@@ -35,20 +41,21 @@ export default function FilterBar({ tags }) {
     }
 
     return (
-        <aside className="filterBar">
-            <div className="filterCategories">
+        <aside className={styles.filterBar}>
+            <section className={styles.filterCategories}>
                 <p>Categories</p>
                 <ul>
+                    <li onClick={() => setCategory(null)}>All</li>
                     {categories.map((category) => <li key={category} onClick={() => setCategory(category)}>{category}</li>)}
                 </ul>
-            </div>
-            <div className="filterCities">
+            </section>
+            <section className={styles.filterCities}>
                 <p>Cities</p>
                 <select name="cityQuery" onChange={setCityQuery}>
                     <option value="">All</option>
                     {cities.map((city) => <option key={city} value={city} >{city}</option>)}
                 </select>
-            </div>
+            </section>
         </aside>
     )
 
