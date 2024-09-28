@@ -1,0 +1,82 @@
+.blogLayout {
+    display: flex;
+    width: 100%;
+}
+
+.blog {
+    width: 75%;
+}
+
+.filterBar {
+    width: 25%;
+    padding: 30px;
+}
+
+.filterBar p {
+    font-weight: bold;
+}
+
+.filterBar ul {
+    padding-left: 20px;
+}
+
+.filterBar ul li:hover {
+    cursor: pointer;
+    color: var(--dark-blue);
+    text-decoration: underline;
+
+}
+
+.filterBar select {
+    margin-left: 20px;
+}
+
+.blogPosts {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding:30px;
+}
+
+.blogPost {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    border:1px solid var(--dark-blue)
+}
+
+.blogPostCover {
+    position: relative;
+    width: 100%;
+    height:30%;
+}
+
+.blogPostCover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.blogPost p {
+    width: 100%;
+}
+
+.blogPostDate {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.blogPostTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+.blogPostDescription {
+    font-size: 16px;
+    color: var(--dark-blue);
+    word-wrap: break-word;
+}
