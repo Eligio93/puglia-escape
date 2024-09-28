@@ -1,13 +1,17 @@
 import { getTags } from "@/config/contentful/client"
 import FilterBar from "@/components/Blog/FilterBar"
-import Link from "next/link"
+import styles from '@/styles/blog.module.css'
 export default async function BlogLayout({ children }) {
     const tags = await getTags()
     return (
-        <div className="blogLayout">
-            <FilterBar
-                tags={tags} />
-            {children}
-        </div>
+        <>
+            <h2 style={{ textAlign: 'center' }}>Blog Title Layout</h2>
+            <div className={styles.blogLayout}>
+                <FilterBar
+                    tags={tags} />
+                {children}
+            </div>
+
+        </>
     )
 }
