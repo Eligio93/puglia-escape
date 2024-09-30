@@ -4,33 +4,43 @@ export const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 })
-
+//get all posts and in case filter them by category and city
 export async function getPosts(category = null, city = null) {
     if (!category && !city) {
-        const response = await client.getEntries({ content_type: 'blogPost' })
+        const response = await client.getEntries({ content_type: 'blogPost', order: '-sys.createdAt' })
         return response
     } else if (category && city) {
         const response = await client.getEntries({
             content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [category, city]
+            'metadata.tags.sys.id[in]': [category, city],
+            order: '-sys.createdAt'
         })
         return response
     } else if (city) {
         const response = await client.getEntries({
             content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [city]
+            'metadata.tags.sys.id[in]': [city],
+            order: '-sys.createdAt'
         })
         return response
     } else if (category) {
         const response = await client.getEntries({
             content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [category]
+            'metadata.tags.sys.id[in]': [category],
+            order: '-sys.createdAt'
         })
         return response
     }
 
 }
+//get tags to set Categories and Cities
 export async function getTags() {
     const response = await client.getTags()
+    return response
+}
+
+//get the post with a particular slug
+export async function getPostBySlug(slug) {
+    const response = await client.getEntries({ content_type: 'blogPost', 'fields.postSlug': slug })
     return response
 }
