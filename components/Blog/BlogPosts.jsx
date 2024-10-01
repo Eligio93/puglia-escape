@@ -17,7 +17,7 @@ export default async function BlogPosts({ posts }) {
                 </div>
                 <p className={styles.blogPostDate}>{post.fields.publishingDate}</p> {/*date needs to be formatted with date-fns*/}
                 <p className={styles.blogPostTitle}>{post.fields.postTitle}</p>
-                <p className={styles.blogPostDescription}>{post.fields.postDescription}</p>
+                <p className={styles.blogPostSubtitle}>{post.fields.postSubtitle}</p>
                 <div className={styles.authorInfo}>
                     <Image 
                         src={'https:' + post.fields.postAuthor.fields.authorPicture.fields.file.url}
