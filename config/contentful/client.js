@@ -44,3 +44,8 @@ export async function getPostBySlug(slug) {
     const response = await client.getEntries({ content_type: 'blogPost', 'fields.postSlug': slug })
     return response
 }
+//get featured posts
+export async function getFeaturedPosts() {
+    const response = await client.getEntries({ content_type: 'blogPost',limit:5, order: '-sys.createdAt', 'metadata.tags.sys.id[in]': ['featured'] })
+    return response
+}
