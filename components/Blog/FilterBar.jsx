@@ -43,14 +43,14 @@ export default function FilterBar({ tags }) {
     return (
         <aside className={styles.filterBar}>
             <section className={styles.filterCategories}>
-                <p>Categories</p>
+            <hr className={styles.divider} data-content="Categories" />
                 <ul>
                     <li onClick={() => setCategory(null)}>All</li>
                     {categories.map((category) => <li key={category} onClick={() => setCategory(category)}>{category}</li>)}
                 </ul>
             </section>
             <section className={styles.filterCities}>
-                <p>Cities</p>
+            <hr className={styles.divider} data-content="Cities" />
                 <select name="cityQuery" onChange={setCityQuery}>
                     <option value="">All</option>
                     {cities.map((city) => <option key={city} value={city} >{city}</option>)}
