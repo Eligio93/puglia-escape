@@ -10,26 +10,79 @@
 .filterBar {
     width: 25%;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.filterBar p {
+.divider {
+    border: 0;
+    font-size: 18px;
+    height: 1.5em;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.divider::before {
+    content: "";
+    background: var(--dark-blue);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.divider::after {
+    background-color: white;
+    color: var(--dark-blue);
     font-weight: bold;
+    content: attr(data-content);
+    line-height: 1.5em;
+    padding: 0 7px;
+    position: relative;
 }
 
 .filterBar ul {
     padding-left: 20px;
+    list-style-type: none;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--dark-blue);
+}
+
+.filterBar ul li {
+    font-size: 20px;
 }
 
 .filterBar ul li:hover {
     cursor: pointer;
-    color: var(--dark-blue);
+    color: var(--blue);
     text-decoration: underline;
 
 }
 
-.filterBar select {
-    margin-left: 20px;
+.filterCities {
+    display: flex;
+    flex-direction: column;
 }
+
+.filterBar select {
+    width: 100%;
+    font-size: 20px;
+    align-self: center;
+    color: var(--dark-blue);
+    padding-left: 20px;
+}
+.filterCities select option:hover{
+    background-color: var(--blue);
+   
+}
+
+
 
 .blogPosts {
     display: flex;
@@ -90,7 +143,7 @@
     border-bottom: 1px solid var(--dark-blue);
 }
 
-.blogPostDescription {
+.blogPostSubtitle {
     display: -webkit-box;
     font-style: italic;
     font-size: 16px;
