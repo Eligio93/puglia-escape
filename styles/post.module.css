@@ -1,12 +1,44 @@
 .postLayout {
     display: flex;
     padding: 30px;
-    gap: 20px;
+    gap: 50px;
 }
 
 .postLayout aside {
     width: 20%;
 }
+
+
+.divider {
+    border: 0;
+    font-size: 18px;
+    height: 1.5em;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.divider::before {
+    content: "";
+    background: var(--dark-blue);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.divider::after {
+    background-color: white;
+    color: var(--dark-blue);
+    font-weight: bold;
+    content: attr(data-content);
+    line-height: 1.5em;
+    padding: 0 7px;
+    position: relative;
+}
+
 
 .post {
     position: relative;
