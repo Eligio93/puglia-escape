@@ -1,6 +1,6 @@
 import { getPostBySlug } from "@/config/contentful/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import PostInfo from "@/components/Post/PostInfo";
+import PostHeader from "@/components/Post/PostHeader";
 import PostHero from "@/components/Post/PostHero";
 import styles from '@/styles/post.module.css'
 import { options } from "@/config/contentful/RichTextOptions";
@@ -43,7 +43,7 @@ export default async function Post({ params }) {
 
     return (
         <div className={styles.post}>
-            <PostInfo post={post} />
+            <PostHeader post={post} />
             <PostHero post={post} />
             <section className={styles.mainContent}>
                 {body}
