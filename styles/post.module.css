@@ -1,13 +1,19 @@
 .postLayout {
     display: flex;
     padding: 30px;
-    gap: 50px;
+    gap: 100px;
 }
 
 .postLayout aside {
     width: 20%;
 }
 
+.postSidebar {
+    position: sticky;
+    top: 130px;
+    /* header height + padding*/
+    height: fit-content;
+}
 
 .divider {
     border: 0;
@@ -18,6 +24,7 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
 
 .divider::before {
     content: "";
@@ -49,14 +56,16 @@
     gap: 10px;
 }
 
-.postInfo {
+.postHeader {
     display: flex;
     height: 50px;
     justify-content: space-between;
     padding: 0 10px 0 10px;
+    gap: 20px;
 }
 
 .authorInfo {
+    flex: 1;
     display: flex;
     height: 100%;
     align-items: center;
@@ -78,10 +87,21 @@
     font-style: italic;
 }
 
-.publishingDate {
+.shareButtons {
     display: flex;
+    gap: 20px;
     align-items: center;
-    gap: 10px;
+}
+
+.shareButtons img {
+    width: 25px;
+    height: auto;
+    transition: transform 200ms linear;
+}
+
+.shareButtons img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .postTitle {
