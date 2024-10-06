@@ -111,10 +111,3 @@ form input:focus {
 
 }
 
-
-@media screen and (max-width:1440px) {
-    body {
-        font-size: 15px;
-    }
-
-}
