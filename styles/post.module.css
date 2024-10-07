@@ -4,16 +4,40 @@
     gap: 100px;
 }
 
-.postLayout aside {
-    width: 20%;
-}
-
 .postSidebar {
+    width: 20%;
     position: sticky;
     top: 130px;
-    /* header height + padding*/
-    height: fit-content;
+    height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid red;
 }
+
+.postSidebarR {
+    border: 1px solid red;
+    width: 15%;
+}
+
+.featuredPosts ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featuredPosts a {
+    color: var(--dark-blue);
+    font-weight: 600;
+    transition: all 200ms ease-in-out;
+    border-radius: 10px;
+}
+
+.featuredPosts a:hover {
+    transform: translateX(10px);
+    box-shadow: -5px 0px 20px 0px var(--dark-blue);
+}
+
 
 .divider {
     border: 0;
@@ -22,7 +46,7 @@
     line-height: 1em;
     position: relative;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -51,9 +75,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     color: var(--dark-blue);
     gap: 10px;
+    font-size: 24px;
 }
 
 .postHeader {
@@ -79,6 +104,7 @@
 }
 
 .authorName p:nth-of-type(1) {
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -104,6 +130,14 @@
     transform: scale(1.2);
 }
 
+/*-----POST HERO SECTION-----*/
+.postHero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .postTitle {
     font-weight: bold;
     font-size: 48px;
@@ -113,7 +147,7 @@
 .postMainImageBox {
     position: relative;
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
     height: 500px;
 }
 
@@ -125,5 +159,43 @@
 
 .postSubtitle {
     font-size: 24px;
-    opacity: 0.8;
+    font-weight: 600;
+}
+
+/*-----POST BODY -----*/
+.postBody h3 {
+    font-size: 36px;
+    margin: 30px 0 20px 0;
+}
+
+.postBody h4 {
+    font-size: 30px;
+    margin: 20px 0 10px 0;
+}
+
+.postBody .embeddedImage {
+    margin: 20px 0;
+}
+
+.postBody p {
+    margin-bottom: 10px;
+}
+
+.postBody ul,
+.postBody ol {
+    padding-left: 50px;
+}
+
+.postbody li:before {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.postBody a {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+.postBody a:hover {
+    text-decoration: underline;
+    color: var(--blue);
 }
