@@ -9,7 +9,7 @@ export default function PostBody({ post }) {
     const body = documentToReactComponents(post.items[0].fields.postBody, options)
 
     return (
-        <section className={styles.mainContent}>
+        <section className={styles.postBody}>
             {body}
         </section>
     )
