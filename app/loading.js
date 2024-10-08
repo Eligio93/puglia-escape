@@ -1,4 +1,8 @@
 
 export default function Loading() {
-    return <h1>Loading</h1>
+    return (
+        <div style={{minHeight: '100vh'}}>
+            <p>Loading...</p>
+        </div>
+    )
 }
