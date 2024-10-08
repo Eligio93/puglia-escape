@@ -1,10 +1,12 @@
-.postLayout {
+/*----MAIN CONTAINER OF THE PAGE----*/
+.postContainer {
     display: flex;
     padding: 30px;
     gap: 100px;
 }
 
-.postSidebar {
+/*----SIDEBAR LEFT----*/
+.postSidebarLeft {
     width: 20%;
     position: sticky;
     top: 130px;
@@ -12,17 +14,13 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    border: 1px solid red;
-}
 
-.postSidebarR {
-    border: 1px solid red;
-    width: 15%;
 }
 
 .featuredPosts ul {
     display: flex;
     flex-direction: column;
+    list-style-type: none;
     gap: 20px;
 }
 
@@ -36,6 +34,28 @@
 .featuredPosts a:hover {
     transform: translateX(10px);
     box-shadow: -5px 0px 20px 0px var(--dark-blue);
+}
+
+.featuredPost {
+    display: flex;
+    gap: 10px;
+    height: 100px;
+    width: 100%;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.featuredPostImage {
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.featuredPostImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 
@@ -70,8 +90,10 @@
     position: relative;
 }
 
+/*-----POST ARTICLE-----*/
 
-.post {
+
+.postArticle {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -80,6 +102,9 @@
     gap: 10px;
     font-size: 24px;
 }
+
+
+/*-----POST HEADER SECTION-----*/
 
 .postHeader {
     display: flex;
@@ -195,7 +220,57 @@
     color: var(--dark-blue);
     font-weight: 600;
 }
+
 .postBody a:hover {
     text-decoration: underline;
     color: var(--blue);
+}
+
+
+
+/*----RELATED POSTS-----*/
+.relatedPostContainer {
+    padding: 30px;
+}
+
+.relatedPostsContainer h2 {
+    font-size: 36px;
+    margin-bottom: 20px
+}
+
+.relatedPostsContainer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.relatedPostsContainer ul a {
+    flex: 1 1 28%;
+
+    height: 200px;
+}
+
+.relatedPost:hover {
+    text-decoration: underline;
+}
+
+.relatedPost {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.relatedPostImage {
+    width: 50%;
+}
+
+.relatedPostImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
