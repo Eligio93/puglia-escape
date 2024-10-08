@@ -1,9 +1,13 @@
 import { getPostBySlug } from "@/config/contentful/client";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import SideBarLeft from "@/components/Post/SideBarLeft";
 import PostHeader from "@/components/Post/PostHeader";
 import PostHero from "@/components/Post/PostHero";
+import PostBody from "@/components/Post/PostBody";
 import styles from '@/styles/post.module.css'
-import { options } from "@/config/contentful/RichTextOptions";
+
+import Link from "next/link";
+import Image from "next/image";
+import { min } from "date-fns";
 
 export async function generateMetadata({ params }) {
     const slug = params.slug;
@@ -38,17 +42,72 @@ export async function generateMetadata({ params }) {
 export default async function Post({ params }) {
     const slug = params.slug;
     const post = await getPostBySlug(slug)
-    const body = documentToReactComponents(post.items[0].fields.postBody, options)
-    // console.log(post.items[0].metadata.tags.sys.id)
-
+    const relatedPosts = post.items[0].fields.relatedPosts
+    console.log(relatedPosts[0].fields.mainImage.fields.file)
     return (
-        <div className={styles.post}>
-            <PostHeader post={post} />
-            <PostHero post={post} />
-            <section className={styles.mainContent}>
-                {body}
-            </section>
-        </div>
+        <>
+            <div className={styles.postContainer}>
+                <SideBarLeft />
+                <article className={styles.postArticle}>
+                    <PostHeader post={post} />
+                    <PostHero post={post} />
+                    <PostBody post={post} />
+                </article>
+            </div>
+            <section className={styles.relatedPostsContainer} style={{ backgroundColor: 'var(--blue)', color: 'white',padding:'30px' }}>
+                <h2>Related Posts</h2>
+                <hr />
+                <ul>
+                    {relatedPosts && relatedPosts.map((post) =>
+                        <>
+                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
+                                <li className={styles.relatedPost}>
+                                    <div className={styles.relatedPostImage}>
+                                        <Image
+                                            src={'https:' + post.fields.mainImage.fields.file.url}
+                                            alt={post.fields.mainImage.fields.description}
+                                            height={post.fields.mainImage.fields.file.details.image.height}
+                                            width={post.fields.mainImage.fields.file.details.image.width}
+                                        />
+                                    </div>
+                                    <p>{post.fields.postTitle}</p>
 
+                                </li>
+                            </Link>
+                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
+                                <li className={styles.relatedPost}>
+                                    <div className={styles.relatedPostImage}>
+                                        <Image
+                                            src={'https:' + post.fields.mainImage.fields.file.url}
+                                            alt={post.fields.mainImage.fields.description}
+                                            height={post.fields.mainImage.fields.file.details.image.height}
+                                            width={post.fields.mainImage.fields.file.details.image.width}
+                                        />
+                                    </div>
+                                    <p>{post.fields.postTitle}</p>
+
+                                </li>
+                            </Link>
+                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
+                                <li className={styles.relatedPost}>
+                                    <div className={styles.relatedPostImage}>
+                                        <Image
+                                            src={'https:' + post.fields.mainImage.fields.file.url}
+                                            alt={post.fields.mainImage.fields.description}
+                                            height={post.fields.mainImage.fields.file.details.image.height}
+                                            width={post.fields.mainImage.fields.file.details.image.width}
+                                        />
+                                    </div>
+                                    <p className={styles.relatedPostTitle}>{post.fields.postTitle}</p>
+
+                                </li>
+                            </Link>
+                        </>
+                    )}
+                </ul>
+
+
+            </section >
+        </>
     )
 }
