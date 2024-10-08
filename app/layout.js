@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import SessionProvider from '@/config/Authentication/SessionProvider'
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 import './global.css'
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
@@ -20,10 +21,9 @@ export default async function RootLayout({ children }) {
     <SessionProvider session={session}>
       <html lang="en">
         <body className={inter.className}>
-
           <Header />
           {children}
-
+          <Footer />
         </body>
       </html>
     </SessionProvider>
