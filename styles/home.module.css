@@ -5,7 +5,6 @@
     height: calc(90vh - 90px);
     /* max-width: 1400px; */
     margin: 0 auto;
-    z-index: -1;
 }
 
 .heroDescription {
@@ -24,6 +23,24 @@
     width: 50%;
     height: 100%;
 
+}
+
+.exploreBlogBtn {
+    background-color: var(--light-blue);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: 30px;
+    color: var(--dark-blue);
+    transition: all 200ms ease-in-out;
+}
+
+.exploreBlogBtn:hover,
+.embla__prev:hover,
+.embla__next:hover {
+    cursor: pointer;
+    background-color: var(--teal);
+    color: white;
 }
 
 .categoriesContainer {
@@ -105,46 +122,44 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* background:rgba(45, 15, 13,1); */
 }
 
 .categoryCta:hover {
     cursor: pointer;
 }
 
+/*----LATEST BLOG POSTS-----*/
+
 .latestBlogPosts {
-    padding: 30px;
+    background-color: var(--dark-blue);
+    padding-top: 30px;
 }
 
 .latestBlogPosts h2 {
+    color: white;
     padding-bottom: 30px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--dark-blue);
 }
 
 .embla {
     overflow: hidden;
+    padding: 30px;
 }
 
 .embla__container {
     display: flex;
 }
 
-.embla__viewport {
-    margin-bottom: 30px;
-}
 
 .embla__slide {
-    flex: 0 0 60%;
-    margin-right: 20px;
-    margin-left: 20px;
+    flex: 0 0 50%;
+    margin-right: 10%;
     display: flex;
     min-width: 0;
-    height: 500px;
+    height: 350px;
     border-radius: 10px;
     border: 1px solid black;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.3;
     transition: opacity 0.3s ease;
 }
 
@@ -155,46 +170,70 @@
     object-fit: cover;
 }
 
-.carouselNav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 0 auto;
-}
-
 .carouselPostInfo {
     width: 50%;
+    padding:10px 20px;
     border-radius: 0 10px 10px 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--dark-blue);
-    color: white;
-
+    background-color: white;
+    color: var(--dark-blue);
+}
+.carouselPostDate{
+    font-size: 12px;
+    align-self: flex-end;
 }
 
-.carouselPostInfo p:nth-of-type(1) {
-    background-color: var(--dark-blue);
+.carouselPostTitle {
     border-radius: 0 10px 0 0;
-    color: white;
-    height: 40%;
-    font-size: 36px;
-    padding: 20px;
-    border-bottom: 1px solid var(--blue);
+    font-weight: bold;
+    font-size: 30px;
 }
 
-.carouselPostInfo p:nth-of-type(2) {
-    padding: 20px;
-    height: 60%;
-    font-size: 24px;
+.carouselPostInfo hr{
+    margin:10px 0;
+}
+
+.carouselPostSubtitle {
+    background-color: white;
+    color: var(--dark-blue);
+    font-size: 20px;
+    border-radius: 10px;
+
+    display: -webkit-box;
     font-style: italic;
+    color: var(--dark-blue);
+    word-wrap: break-word;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .embla__container :global(.is-snapped) {
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+
+.carouselNav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px 10px 0;
+    gap: 30px;
+    margin: 0 auto;
+    background-color: var(--dark-blue);
+}
+
+.embla__prev,
+.embla__next {
+    background-color: var(--light-blue);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--dark-blue);
+    transition: all 200ms ease-in-out;
 }
 
 .homeInfo {
