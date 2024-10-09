@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from '@/styles/blog.module.css'
+import { format } from "date-fns";
 
 export default async function BlogPosts({ posts }) {
     // console.log(posts[0].fields.postAuthor.fields.authorPicture)
@@ -15,7 +16,7 @@ export default async function BlogPosts({ posts }) {
                     //needs to add sizes
                     />
                 </div>
-                <p className={styles.blogPostDate}>{post.fields.publishingDate}</p> {/*date needs to be formatted with date-fns*/}
+                <p className={styles.blogPostDate}>{format(post.fields.publishingDate , 'MMMM dd, yyyy')}</p>     {/*date needs to be formatted with date-fns*/}
                 <p className={styles.blogPostTitle}>{post.fields.postTitle}</p>
                 <p className={styles.blogPostSubtitle}>{post.fields.postSubtitle}</p>
                 <div className={styles.authorInfo}>
