@@ -6,11 +6,12 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import ClassNames from 'embla-carousel-class-names'
 import Image from 'next/image'
+import { format } from 'date-fns'
 
 
 
 export default function EmblaCarousel({ posts }) {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnMouseEnter: true, stopOnInteraction: false }),ClassNames({inView:''})])
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnMouseEnter: true, stopOnInteraction: false }), ClassNames({ inView: '' })])
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -20,7 +21,6 @@ export default function EmblaCarousel({ posts }) {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
 
-    console.log(posts)
     return (
         <div className={styles.embla} >
 
@@ -35,18 +35,19 @@ export default function EmblaCarousel({ posts }) {
                             width={post.fields.mainImage.fields.file.details.image.width}
                         />
                         <div className={styles.carouselPostInfo}>
-                            <p>{post.fields.postTitle}</p>
-                            <p>{post.fields.postDescription}</p>
+                            <p className={styles.carouselPostDate}>{format(post.fields.publishingDate, 'MMMM dd, yyyy')}</p>
+                            <p className={styles.carouselPostTitle}>{post.fields.postTitle}</p>
+                            <hr />
+                            <p className={styles.carouselPostSubtitle}>{post.fields.postSubtitle}</p>
                         </div>
-                        
+
                     </div>)}
                 </div>
             </div>
             <div className={styles.carouselNav}>
-                <button className={styles.embla__prev} onClick={scrollPrev}>Prev</button>
+                <button className={styles.embla__prev} onClick={scrollPrev}> &lt; </button>
                 <button className={styles.embla__next} onClickCapture={scrollNext}>Next</button>
             </div>
-
         </div>
     )
 }
