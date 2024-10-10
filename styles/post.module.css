@@ -43,19 +43,24 @@
     width: 100%;
     border: 1px solid var(--dark-blue);
     border-radius: 10px;
-    padding: 10px;
 }
 
 .featuredPostImage {
     position: relative;
     height: 100%;
     width: 40%;
+    padding:10px 0 10px 10px
 }
 
 .featuredPostImage img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+.featuredPostTitle {
+    width: 60%;
+    overflow: hidden;
+    padding:10px 10px 10px 0;
 }
 
 
