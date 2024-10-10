@@ -4,6 +4,7 @@ import { getFeaturedPosts } from "@/config/contentful/client";
 import styles from '@/styles/post.module.css'
 
 
+
 export default async function SideBarLeft() {
     const featuredPosts = await getFeaturedPosts();
     return (
@@ -18,18 +19,19 @@ export default async function SideBarLeft() {
                                     <Image
                                         src={'https:' + post.fields.mainImage.fields.file.url}
                                         alt={post.fields.mainImage.fields.description}
-                                        fill={true}
+                                        height={post.fields.mainImage.fields.file.details.image.height}
+                                        width={post.fields.mainImage.fields.file.details.image.width}
                                     />
                                 </div>
-                                <p style={{ width: '60%' }}> {post.fields.postTitle}</p>
+                                <p className={styles.featuredPostTitle} style={{ width: '60%' }}> {post.fields.postTitle}</p>
                             </li>
                         </Link>)}
                 </ul>
             </section>
-            <section>
+            {/* <section>
                 <hr className={styles.divider} data-content="Book your experience in Puglia" />
 
-            </section>
+            </section> */}
         </aside>
     )
 }
