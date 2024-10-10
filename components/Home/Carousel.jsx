@@ -6,6 +6,8 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import ClassNames from 'embla-carousel-class-names'
 import Image from 'next/image'
+import previousIcon from '@/public/previousIcon.svg'
+import nextIcon from '@/public/nextIcon.svg'
 import { format } from 'date-fns'
 
 
@@ -45,8 +47,18 @@ export default function EmblaCarousel({ posts }) {
                 </div>
             </div>
             <div className={styles.carouselNav}>
-                <button className={styles.embla__prev} onClick={scrollPrev}> &lt; </button>
-                <button className={styles.embla__next} onClickCapture={scrollNext}>Next</button>
+                <button className={styles.embla__prev} onClick={scrollPrev}>
+                    <Image
+                        src={previousIcon}
+                        alt='previous icon'
+                    />
+                </button>
+                <button className={styles.embla__next} onClickCapture={scrollNext}>
+                    <Image
+                        src={nextIcon}
+                        alt='next icon'
+                    />
+                </button>
             </div>
         </div>
     )
