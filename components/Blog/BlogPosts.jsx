@@ -16,19 +16,24 @@ export default async function BlogPosts({ posts }) {
                     //needs to add sizes
                     />
                 </div>
-                <p className={styles.blogPostDate}>{format(post.fields.publishingDate , 'MMMM dd, yyyy')}</p>     {/*date needs to be formatted with date-fns*/}
+                <p className={styles.blogPostDate}>{format(post.fields.publishingDate, 'MMMM dd, yyyy')}</p>     {/*date needs to be formatted with date-fns*/}
                 <p className={styles.blogPostTitle}>{post.fields.postTitle}</p>
                 <p className={styles.blogPostSubtitle}>{post.fields.postSubtitle}</p>
-                <div className={styles.authorInfo}>
-                    <Image 
-                        src={'https:' + post.fields.postAuthor.fields.authorPicture.fields.file.url}
-                        alt = {post.fields.postAuthor.fields.authorPicture.fields.description}
-                        height={236}
-                        width={236}
-                    />
-                    <p>{post.fields.postAuthor.fields.authorName}</p>
+                <div className={styles.blogPostFooter}>
+                    <div className={styles.authorInfo}>
+                        <Image
+                            src={'https:' + post.fields.postAuthor.fields.authorPicture.fields.file.url}
+                            alt={post.fields.postAuthor.fields.authorPicture.fields.description}
+                            height={236}
+                            width={236}
+                        />
+                        <p>{post.fields.postAuthor.fields.authorName}</p>
+
+                    </div>
+                    <p className={styles.readingTime}>{post.fields.readingTime + ' min read'}</p>
 
                 </div>
+
             </Link>)}
             {posts.length == 0 && <p>No posts found</p>}
         </div>
