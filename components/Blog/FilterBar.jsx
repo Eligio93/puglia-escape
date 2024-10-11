@@ -19,6 +19,9 @@ export default function FilterBar({ tags }) {
 
     function setCategory(category) {
         const currentQuery = new URLSearchParams(searchParams.toString());
+        if (currentQuery.has('searchValue')) {
+            currentQuery.delete('searchValue');
+        }
         //adds or updates the category
         if (category) {
             currentQuery.set('category', category);
@@ -32,6 +35,9 @@ export default function FilterBar({ tags }) {
     function setCityQuery(e) {
         const city = e.target.value;
         const currentQuery = new URLSearchParams(searchParams.toString());
+        if (currentQuery.has('searchValue')) {
+            currentQuery.delete('searchValue');
+        }
         if (city) {
             currentQuery.set('city', city);  //update the city with the new city selected
         } else {
@@ -43,14 +49,14 @@ export default function FilterBar({ tags }) {
     return (
         <aside className={styles.filterBar}>
             <section className={styles.filterCategories}>
-            <hr className={styles.divider} data-content="Categories" />
+                <hr className={styles.divider} data-content="Categories" />
                 <ul>
                     <li onClick={() => setCategory(null)}>All</li>
                     {categories.map((category) => <li key={category} onClick={() => setCategory(category)}>{category}</li>)}
                 </ul>
             </section>
             <section className={styles.filterCities}>
-            <hr className={styles.divider} data-content="Cities" />
+                <hr className={styles.divider} data-content="Cities" />
                 <select name="cityQuery" onChange={setCityQuery}>
                     <option value="">All</option>
                     {cities.map((city) => <option key={city} value={city} >{city}</option>)}
