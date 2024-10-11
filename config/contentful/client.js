@@ -49,3 +49,10 @@ export async function getFeaturedPosts() {
     const response = await client.getEntries({ content_type: 'blogPost',limit:5, order: '-sys.createdAt', 'metadata.tags.sys.id[in]': ['featured'] })
     return response
 }
+
+//get posts by search value
+
+export async function getPostsBySearch(search) {
+    const response = await client.getEntries({ content_type: 'blogPost', 'fields.postTitle[match]': search, order: '-sys.createdAt' })
+    return response
+}
