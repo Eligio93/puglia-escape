@@ -6,18 +6,32 @@ import facebookIcon from '@/public/facebookIcon.svg'
 import InstagramIcon from '@/public/instagramIcon.svg'
 import SearchBar from "./Searchbar"
 import AuthSection from "./AuthSection"
+import pugliaProjectLogo from '@/public/pugliaProjectLogo.webp'
 
 export default function Header() {
 
     return (
         <header className={styles.header}>
-            <nav>
-                <Link href='/'>Logo Sito</Link>
-                <Link href='/'>Home</Link>
-                <Link href='/posts'>Blog</Link>
-                <Link href='/guides'>Guides</Link>
-                <Link href='/Events'>Events</Link>
-                <Link href='/about'>About</Link>
+            <nav className={styles.headerNav}>
+                <ul className={styles.headerNavList}>
+                    <Link href='/' className={styles.pugliaProjectLogo}>
+                        <li>
+                            <Image
+                                src={pugliaProjectLogo}
+                                alt="logo puglia project"
+                            />
+                        </li>
+
+                    </Link>
+
+                    <Link href='/'><li>Home</li></Link>
+                    <Link href='/blog'><li>Blog</li></Link>
+                    <Link href='/guides'><li>Guides</li></Link>
+                    <Link href='/blog?category=Events'><li>Events</li></Link>
+                    <Link href='/about'><li>About</li></Link>
+
+                </ul>
+
             </nav>
             <div className={styles.pugliaLogo}>
                 <Image
@@ -50,7 +64,7 @@ export default function Header() {
                             }}
                         />
                     </a>
-                    <Link href={'instagram.com'}>
+                    <a target='_blank' href={'instagram.com'}>
                         <Image
                             src={InstagramIcon}
                             alt='instagram icon'
@@ -61,7 +75,7 @@ export default function Header() {
                                 height: 'auto'
                             }}
                         />
-                    </Link>
+                    </a>
                 </div>
                 <AuthSection />
             </div>
