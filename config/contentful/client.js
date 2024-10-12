@@ -12,7 +12,7 @@ export async function getPosts(category = null, city = null) {
     } else if (category && city) {
         const response = await client.getEntries({
             content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [category, city],
+            'metadata.tags.sys.id[all]': [category, city],
             order: '-sys.createdAt'
         })
         return response
