@@ -1,3 +1,5 @@
+/*-----HERO SECTION-----*/
+
 .hero {
     position: relative;
     display: flex;
@@ -59,6 +61,9 @@
     color: var(--dark-blue);
     font-weight: bold;
 }
+
+
+/*-----CATEGORIES CONTAINER-----*/
 
 .categoriesContainer p {
     font-size: 24px;
@@ -157,18 +162,37 @@
 /*----LATEST BLOG POSTS-----*/
 
 .latestBlogPosts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     background-color: var(--dark-blue);
-    padding: 30px 30px 0 30px
+    padding: 30px
 }
 
 .latestBlogPosts h2 {
     color: white;
-    padding-bottom: 30px;
 }
+
+.latestBlogPosts>p {
+    font-size: 24px;
+    width: 70%;
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+.latestBlogPosts hr {
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 20px;
+}
+
+/*-----CAROUSEL-----*/
 
 .embla {
     overflow: hidden;
-    padding: 30px 0 0 0;
+
 }
 
 .embla__container {
@@ -226,7 +250,6 @@
     color: var(--dark-blue);
     font-size: 20px;
     border-radius: 10px;
-
     display: -webkit-box;
     font-style: italic;
     color: var(--dark-blue);
@@ -246,8 +269,8 @@
 .carouselNav {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    gap:20px;
+    padding-top: 20px;
+    gap: 20px;
     margin: 0 auto;
     background-color: var(--dark-blue);
 }
@@ -269,6 +292,8 @@
     width: 100%;
     height: 100%;
 }
+
+/*-----INFO SECTION-----*/
 
 .homeInfo {
     display: flex;
@@ -309,12 +334,30 @@
     font-weight: bold;
 }
 
+/*-----FAVOURITE CITIES SECTION-----*/
+
 .favouriteCities {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding: 30px;
 }
+
+.favouriteCities>p {
+    font-size: 24px;
+    width: 70%;
+    align-self: center;
+    text-align: center;
+    color: var(--blue);
+    font-style: italic;
+}
+
+.favouriteCities hr {
+    width: 100%;
+    border: 1px solid var(--dark-blue);
+    margin-bottom: 20px;
+}
+
 
 .citiesGrid {
     display: grid;
@@ -390,4 +433,89 @@
 .gridItemOstuni {
     grid-column: 3/6;
     grid-row: 5/7;
+}
+
+/*VERY SMALL DEVICES*/
+@media screen and (max-width: 480px) {
+    .hero {
+        height: calc(100vh - 70px);
+    }
+
+    .heroDescription {
+        padding-left: 20px;
+        font-size: 32px;
+        width: 80%;
+    }
+
+    .exploreBlogBtn {
+        padding: 15px;
+    }
+
+    .categoriesContainer,
+    .latestBlogPosts {
+        padding: 20px;
+    }
+
+    .categoriesContainer p,
+    .latestBlogPosts>p,.favouriteCities>p{
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .embla__slide {
+        flex: 0 0 90%;
+        flex-direction: column;
+        border: none;
+        height: 350px;
+    }
+
+    .carouselImg {
+        width: 100%;
+        height: 40%;
+        border-radius: 10px 10px 0 0 ;
+    }
+    
+    .carouselPostInfo {
+        width: 100%;
+        height: 60%;
+        padding: 10px 10px;
+        border-radius: 0 0 10px 10px;
+
+
+    }
+    
+    .carouselPostDate {
+        font-size: 10px;
+        align-self: flex-end;
+    }
+    
+    .carouselPostTitle {
+        border-radius: 0 10px 0 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .carouselPostInfo hr {
+        margin: 10px 0;
+    }
+    
+    .carouselPostSubtitle {
+        background-color: white;
+        color: var(--dark-blue);
+        font-size: 16px;
+        border-radius: 10px;
+        display: -webkit-box;
+        font-style: italic;
+        color: var(--dark-blue);
+        word-wrap: break-word;
+        overflow: hidden;
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+    .favouriteCities {
+        padding: 20px 0;
+        
+    }
+
 }
