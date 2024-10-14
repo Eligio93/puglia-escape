@@ -12,6 +12,8 @@ export default function FavouriteCities() {
     return (
         <section className={styles.favouriteCities}>
             <h2>Our Favourite Cities</h2>
+            <p>From historic architecture to lively streets and breathtaking views, these cities capture the heart of Puglia and offer unique experiences that highlight the essence of this remarkable region.</p>
+            <hr />
             <div className={styles.citiesGrid}>
                 <Link href='/blog?city=Lecce' className={styles.gridItemLecce}>
                     <Image
@@ -44,7 +46,7 @@ export default function FavouriteCities() {
                 <Link href='/blog?city=Bari' className={styles.gridItemBari}>
                     <Image
                         src={bariImg}
-                        alt='Bari Theatre'
+                        alt='Margherita Theater in Bari'
                     />
                     <p>Bari</p>
                 </Link>
