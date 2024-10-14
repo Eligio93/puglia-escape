@@ -1,3 +1,4 @@
+/*-----HEADER-----*/
 .header {
     height: 100px;
     width: 100%;
@@ -11,28 +12,49 @@
     color: var(--dark-blue);
     justify-content: space-between;
     z-index: 1000;
-
 }
+
+/*-----SITE LOGO-----*/
+
+.pugliaProjectLogo {
+    height: 100px;
+    width: 100px;
+}
+
+.pugliaProjectLogo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
+/*-----HEADER MENU-----*/
+
+.headerNavList {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.headerNavList li {
+    color: white;
+}
+
 
 .pugliaLogo {
     display: flex;
     justify-content: center;
+    height: 100%;
     flex: 1;
 }
-
-.header nav {
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1;
-    display: flex;
-    gap: 30px;
+.pugliaLogo img{
+    height: 100%;
+    width:auto;
+    text-align: center;
+    margin: 0 auto;
 }
 
-.header nav a {
-    font-weight: 500;
-    color: white;
-}
-
+/*-----SOCIAL AND AUTH SECTION-----*/
 .socialBar {
     display: flex;
     justify-content: flex-end;
@@ -60,24 +82,27 @@
     align-items: center;
     gap: 10px;
 }
-.authSection img{
+
+.authSection img {
     height: 40px;
     width: 40px;
     border-radius: 50px;
 }
-.logoutBtn{
-    border:none;
+
+.logoutBtn {
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    gap:5px;
-    padding:5px;
+    gap: 5px;
+    padding: 5px;
     border-radius: 50px;
     font-weight: 600;
     transition: all 200ms linear;
 }
-.logoutBtn:hover{
+
+.logoutBtn:hover {
     background-color: var(--dark-blue);
     cursor: pointer;
     color: white;
@@ -107,8 +132,26 @@
     color: white;
 }
 
-@media screen and (max-width:1024px) {
-    .header nav {
-        display: none
+/*VERY SMALL DEVICES*/
+@media screen and (max-width: 480px) {
+    .header {
+        height: 70px;
     }
+
+    .headerNavList {
+        display: none;
+    }
+
+    .pugliaLogo {
+        display: none;
+    }
+
+    .socialSection {
+        display: none;
+    }
+}
+
+/*MOBILE DEVICES*/
+@media (max-width: 768px) {
+
 }
