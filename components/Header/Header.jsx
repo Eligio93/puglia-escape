@@ -37,13 +37,6 @@ export default function Header() {
                 <Image
                     src={logoPuglia}
                     alt="logo puglia region"
-                    height={100}
-                    width={100}
-                    style={{
-                        width: '60px',
-                        height: 'auto'
-                    }}
-
                 />
             </div>
             <div className={styles.socialBar}>
