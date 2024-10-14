@@ -1,6 +1,4 @@
 import { client } from '@/config/contentful/client'
-import Link from 'next/link'
-import Image from 'next/image'
 import styles from '@/styles/home.module.css'
 import Carousel from './Carousel'
 
@@ -17,6 +15,7 @@ export default async function LatestBlogPosts() {
     return (
         <section className={styles.latestBlogPosts}>
             <h2>Latest Blog Posts from Puglia</h2>
+            <p>Journey through our curated insights and tales that capture the true essence of Puglia, inviting you to explore, savor, and connect with its soul.</p>
             <hr />
             <Carousel
                 posts={response.items}
