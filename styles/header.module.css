@@ -18,7 +18,7 @@
 }
 
 /*-----SITE LOGO-----*/
-.pugliaProjectLogo{
+.pugliaProjectLogo {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -43,6 +43,7 @@
 .headerNavList li {
     color: white;
 }
+
 /*-----SOCIAL AND AUTH SECTION-----*/
 
 .searchbar {
@@ -50,7 +51,6 @@
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
-    min-width: 30%;
 }
 
 .searchbar input {
@@ -133,11 +133,6 @@
 .registerLink:hover {
     background-color: var(--teal);
     color: white;
-}
-
-
-@media (max-width: 1440px) {
-    /* Stili per desktop grandi */
 }
 
 @media (max-width: 1280px) {
