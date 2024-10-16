@@ -15,6 +15,17 @@
 
 .mobileMenu {
     display: none;
+
+}
+
+.mobileMenuNav {
+    border-top: 2px solid var(--dark-blue)
+}
+
+.mobileMenuNav hr {
+    width: 100%;
+    border: 1px solid white;
+    margin: 10px 0;
 }
 
 /*-----SITE LOGO-----*/
@@ -135,27 +146,17 @@
     color: white;
 }
 
-@media (max-width: 1280px) {
-    /* Stili per laptop piccoli e desktop */
-}
+
+
+
 
 @media (max-width: 1024px) {
-    /* Stili per tablet */
-}
-
-@media (max-width: 768px) {
-    /* Stili per dispositivi mobili */
-}
-
-/*VERY SMALL DEVICES*/
-@media screen and (max-width: 480px) {
-    .header {
-        height: 70px;
+    .headerNav {
+        flex: 1;
     }
 
-    .mobileMenu {
-        display: block;
-        height: 70px;
+    .headerNav ul {
+        gap: 20px;
     }
 
     .mobileMenu img {
@@ -163,13 +164,39 @@
         width: 40px;
     }
 
+    .pugliaProjectLogo {
+        order: -1;
+        flex: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .headerNav {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    .pugliaProjectLogo {
+        order: 0;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .mobileMenu .searchbar {
+        display: none;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
     .mobileMenuNav {
         position: absolute;
         padding: 20px 30px;
-        top: 70px;
+        top: 100px;
         left: 0;
         width: 100%;
-
         background-color: var(--blue);
     }
 
@@ -186,57 +213,47 @@
         font-size: 24px;
     }
 
-    .mobileMenuNav .authSection {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-        margin-top: 30px;
-    }
+}
 
-    .mobileMenu .logInLink {
-        font-size: 18px;
-        text-decoration: underline;
-    }
-
-    .logoutBtn {
-        margin: 0 auto;
-    }
-
-    .logoutBtn img {
-        height: 30px;
-        width: 30px;
-    }
-
-    .mobileMenu .registerLink {
-        background-color: transparent;
-        font-size: 18px;
-        padding: 0;
-        text-decoration: underline;
-        color: white;
-
+@media (max-width: 768px) {
+    .header {
+        height: 70px;
     }
 
     .pugliaProjectLogo {
-        display: none;
+        flex: 0;
+        height: 100%;
+        width: 70px;
     }
 
-    .headerNav {
-        display: none;
+    .mobileMenu img {
+        width: 40px;
     }
 
-    .pugliaLogo {
-        display: none;
-    }
-
-    .socialSection {
-        display: none;
+    .mobileMenuNav {
+        top: 70px
     }
 
     .authSection {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .logInLink {
+        font-size: 15px;
+    }
+
+    .registerLink {
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .header .searchbar {
         display: none;
     }
-}
 
-/*MOBILE DEVICES*/
-@media screen and (max-width: 768px) {}
+    .mobileMenu .searchbar {
+        display: flex;
+
+    }
+}
