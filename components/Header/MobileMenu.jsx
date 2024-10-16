@@ -7,6 +7,7 @@ import Image from 'next/image'
 import hamburgerIcon from '@/public/hamburgerIcon.svg'
 import Link from 'next/link'
 import AuthSection from './AuthSection'
+import SearchBar from './Searchbar'
 
 
 
@@ -43,13 +44,13 @@ export default function MobileMenu() {
             />
             {openMenu ? <nav className={style.mobileMenuNav}>
                 <ul className={style.mobileMenuList}>
-
+                    <SearchBar  />
+                    <hr />
                     <Link href='/'><li>Home</li></Link>
                     <Link href='/blog'><li>Blog</li></Link>
                     <Link href='/guides'><li>Guides</li></Link>
                     <Link href='/blog?category=Events'><li>Events</li></Link>
                     <Link href='/about'><li>About</li></Link>
-                    <AuthSection />
                 </ul>
             </nav> : null}
 
