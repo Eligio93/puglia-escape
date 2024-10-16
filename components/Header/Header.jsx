@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import logoPuglia from '@/public/logoPuglia.svg'
 import styles from '@/styles/header.module.css'
 import SearchBar from "./Searchbar"
 import AuthSection from "./AuthSection"
@@ -13,12 +12,6 @@ export default function Header() {
         <header className={styles.header}>
             <MobileMenu />
 
-            <Link href='/' className={styles.pugliaProjectLogo}>
-                <Image
-                    src={pugliaProjectLogo}
-                    alt="logo puglia project"
-                />
-            </Link>
 
             <nav className={styles.headerNav}>
                 <ul className={styles.headerNavList}>
@@ -29,19 +22,16 @@ export default function Header() {
                     <Link href='/about'><li>About</li></Link>
                 </ul>
             </nav>
-
-            <div className={styles.pugliaLogo}>
+            <Link href='/' className={styles.pugliaProjectLogo}>
                 <Image
-                    src={logoPuglia}
-                    alt="logo puglia region"
+                    src={pugliaProjectLogo}
+                    alt="logo puglia project"
                 />
-            </div>
-
+            </Link>
 
             <SearchBar />
-
-
             <AuthSection />
+
 
 
         </header>
