@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import searchIcon from '@/public/searchIcon.svg'
-import styles from '@/styles/searchbar.module.css'
+import styles from '@/styles/header.module.css'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
