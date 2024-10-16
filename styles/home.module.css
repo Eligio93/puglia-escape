@@ -4,7 +4,7 @@
     position: relative;
     display: flex;
     width: 100%;
-    height: calc(90vh - 90px);
+    height: calc(90vh - 100px);
     /* max-width: 1400px; */
     margin: 0 auto;
 }
@@ -82,14 +82,15 @@
 .categories {
     display: flex;
     justify-content: space-around;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 30px;
     width: 100%;
 }
 
 .category {
-    width: 280px;
-    height: 360px;
+    flex: 0 0 20%;
+    max-width: 20%;
+    height: 380px;
     border-radius: 10px;
     padding: 1.5rem;
     background: white;
@@ -298,9 +299,9 @@
 .homeInfo {
     display: flex;
     min-height: 400px;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 30px;
     background-color: var(--blue);
     gap: 50px;
@@ -435,37 +436,50 @@
     grid-row: 5/7;
 }
 
-/*VERY SMALL DEVICES*/
-@media screen and (max-width: 480px) {
 
-    .hero {
-        height: calc(100vh - 70px);
-    }
-
+@media (max-width: 1280px) {
     .heroDescription {
-        padding-left: 20px;
-        font-size: 32px;
-        width: 80%;
+        font-size: 42px;
     }
 
     .exploreBlogBtn {
-        padding: 15px;
+        padding: 12px;
     }
 
-
-
-    .categoriesContainer,
-    .latestBlogPosts {
-        padding: 20px;
-    }
-
-    .categoriesContainer p,
+    .categoriesContainer>p,
     .latestBlogPosts>p,
     .favouriteCities>p {
-        width: 100%;
-        font-size: 20px;
+        width: 80%;
     }
 
+    .category {
+        min-width: 22%;
+    }
+
+    .embla__slide {
+        flex: 0 0 70%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 1028px) {
+    .heroDescription {
+        width: 70%;
+        ;
+    }
+
+    .categories {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .category {
+        min-width: 40%;
+    }
+
+}
+
+@media (max-width: 850px) {
     .category:before {
         top: 70%;
         width: 100%;
@@ -477,6 +491,32 @@
     .category .categoryCta {
         height: 40%;
         opacity: 1;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .embla__slide {
+        flex: 0 0 90%;
+        height: 400px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    .heroDescription {
+        width: 70%;
+        font-size: 32px;
+    }
+
+    .categories {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .category {
+        min-width: 80%;
     }
 
     .embla__slide {
@@ -497,8 +537,6 @@
         height: 60%;
         padding: 10px 10px;
         border-radius: 0 0 10px 10px;
-
-
     }
 
     .carouselPostDate {
@@ -532,4 +570,42 @@
         transform: translateX(-10px);
         margin: 0 auto;
     }
+}
+
+@media (max-width: 480px) {
+    .heroDescription {
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .categoriesContainer p,
+    .latestBlogPosts>p,
+    .favouriteCities>p {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .category {
+        min-width: 100%;
+    }
+    .categoriesContainer {
+        padding: 10px;
+    }
+
+    .latestBlogPosts {
+        padding: 10px;
+    }
+    .favouriteCities {
+        padding: 10px;
+    }
+    .citiesGrid {
+        width: calc(100% + 10px);
+        transform: translateX(-5px);
+    }
+}
+
+
+@media (max-width: 375px) {
+
+  
 }
