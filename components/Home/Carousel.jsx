@@ -9,6 +9,7 @@ import Image from 'next/image'
 import previousIcon from '@/public/previousIcon.svg'
 import nextIcon from '@/public/nextIcon.svg'
 import { format } from 'date-fns'
+import Link from 'next/link'
 
 
 
@@ -28,7 +29,7 @@ export default function EmblaCarousel({ posts }) {
 
             <div className={styles.embla__viewport} ref={emblaRef}>
                 <div className={styles.embla__container}>
-                    {posts.map((post) => <div key={post.sys.id} className={styles.embla__slide}>
+                    {posts.map((post) => <Link  href={'/posts/' + post.fields.postSlug} key={post.sys.id} className={styles.embla__slide}>
                         <Image
                             className={styles.carouselImg}
                             src={'https:' + post.fields.mainImage.fields.file.url}
@@ -43,7 +44,7 @@ export default function EmblaCarousel({ posts }) {
                             <p className={styles.carouselPostSubtitle}>{post.fields.postSubtitle}</p>
                         </div>
 
-                    </div>)}
+                    </Link>)}
                 </div>
             </div>
             <div className={styles.carouselNav}>
