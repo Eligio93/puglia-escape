@@ -4,14 +4,17 @@ import styles from '@/styles/blog.module.css'
 export default async function BlogLayout({ children }) {
     const tags = await getTags()
     return (
-        <>
-            <h2 style={{ textAlign: 'center' }}>Blog Title Layout</h2>
-            <div className={styles.blogLayout}>
+        <div className={styles.blogLayout}>
+            <h2>Your Journey in Puglia</h2>
+            <p>Explore a collection of stories, tips, and insights capturing the essence of Puglia. Dive in and let each post bring you closer to this remarkable region.</p>
+            <hr />
+            <section className={styles.blogContent}>
                 <FilterBar
                     tags={tags} />
                 {children}
-            </div>
+            </section>
+        </div>
 
-        </>
     )
+
 }
