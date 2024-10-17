@@ -1,10 +1,11 @@
 'use client'
 import { useSearchParams, useRouter } from "next/navigation"
 import styles from '@/styles/blog.module.css'
+import { useState } from "react";
 
 
 export default function FilterBar({ tags }) {
-
+    const [selectedCategory,setSelectedCategory] = useState(null)
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -28,7 +29,7 @@ export default function FilterBar({ tags }) {
         } else {
             currentQuery.delete('category');
         }
-
+        setSelectedCategory(category);
         router.push(`/blog?${currentQuery.toString()}`);
     }
 
@@ -50,9 +51,10 @@ export default function FilterBar({ tags }) {
         <aside className={styles.filterBar}>
             <section className={styles.filterCategories}>
                 <hr className={styles.divider} data-content="Categories" />
-                <ul>
-                    <li onClick={() => setCategory(null)}>All</li>
-                    {categories.map((category) => <li key={category} onClick={() => setCategory(category)}>{category}</li>)}
+                <ul className={styles.categoryList}>
+                    <li onClick={() => setCategory(null)} className={selectedCategory === null && styles.selectedCategory}>All</li>
+                    {categories.map((category) =>
+                        <li key={category} onClick={(e) => setCategory(category)} className={selectedCategory === category ? styles.selectedCategory : ""}>{category}</li>)}
                 </ul>
             </section>
             <section className={styles.filterCities}>
