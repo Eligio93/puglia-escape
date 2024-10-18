@@ -49,7 +49,7 @@
     position: relative;
     height: 100%;
     width: 40%;
-    padding:10px 0 10px 10px
+    padding: 10px 0 10px 10px
 }
 
 .featuredPostImage img {
@@ -57,10 +57,11 @@
     width: 100%;
     object-fit: cover;
 }
+
 .featuredPostTitle {
     width: 60%;
     overflow: hidden;
-    padding:10px 10px 10px 0;
+    padding: 10px 10px 10px 0;
 }
 
 
@@ -108,6 +109,9 @@
     font-size: 24px;
 }
 
+.postArticle .postSidebarLeft {
+    display: none;
+}
 
 /*-----POST HEADER SECTION-----*/
 
@@ -208,16 +212,19 @@
 }
 
 .postBody .embeddedImage {
-    margin: 20px 0;
+    width: 90%;
+    height: 400px;
+    margin: 50px auto;
 }
 
 .postBody p {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .postBody ul,
 .postBody ol {
-    padding-left: 50px;
+    padding-left: 40px;
 }
 
 .postbody li:before {
@@ -238,6 +245,10 @@
 
 
 /*-----SHARING Sidebar-----*/
+.sharingSidebar {
+    display: none;
+}
+
 .stickySidebarWrapper {
     position: absolute;
     top: 0px;
@@ -246,7 +257,8 @@
     height: 100%;
 }
 
-.sharingSidebar {
+.postBody .sharingSidebar {
+    display: block;
     position: sticky;
     top: 130px;
     height: fit-content;
@@ -255,12 +267,16 @@
     border-radius: 10px
 }
 
-.sharingSidebar .shareButtons {
+.postBody .sharingSidebar h3 {
+    display: none;
+}
+
+.postBody .sharingSidebar .shareButtons {
     display: flex;
     flex-direction: column;
 }
 
-.sharingSidebar .shareButtons img {
+.postBody.sharingSidebar .shareButtons img {
     width: 35px;
     height: auto;
     transition: transform 200ms linear;
@@ -268,7 +284,10 @@
 
 
 /*----RELATED POSTS-----*/
-.relatedPostContainer {
+
+.relatedPostsContainer {
+    background-color: var(--blue);
+    color: white;
     padding: 30px;
 }
 
@@ -291,6 +310,7 @@
     height: auto;
     min-width: 300px
 }
+
 .relatedPost {
     height: 100%;
     width: 100%;
@@ -299,17 +319,15 @@
     gap: 10px;
     color: white;
     font-weight: bold;
-    border:1px solid white;
+    border: 1px solid white;
     border-radius: 10px;
-    transition:all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .relatedPost:hover {
     text-decoration: underline;
     box-shadow: -5px 0px 20px 0px var(--dark-blue);
 }
-
-
 
 .relatedPostImage {
     width: 50%;
@@ -325,7 +343,219 @@
 
 .relatedPostTitle {
     width: 50%;
-    font-size: 1.5rem;
-    padding:10px 10px 10px 0;
-   
+    font-size: 20px;
+    padding: 10px 10px 10px 0;
+
+}
+
+
+@media (max-width:1440px) {
+    .postArticle {
+        width: 65%;
+    }
+}
+
+@media (max-width:1280px) {
+    .postContainer {
+        gap: 50px;
+    }
+
+    .postSidebarLeft {
+        width: 25%;
+    }
+
+    .featuredPostTitle {
+        font-size: 15px;
+    }
+
+    .stickySidebarWrapper {
+        right: -70px;
+    }
+
+    .relatedPostContainer>h2 {
+        font-size: 30px;
+    }
+
+    .relatedPostTitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:1024px) {
+    .postSidebarLeft {
+        display: none;
+    }
+
+    .postContainer {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .postArticle {
+        width: 80%;
+    }
+
+    .stickySidebarWrapper {
+        display: none;
+    }
+
+    .postBody .sharingSidebar {
+        display: none;
+    }
+
+    .sharingSidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .sharingSidebar h3 {
+        font-size: 36px;
+    }
+
+    .sharingSidebar .shareButtons img {
+        width: 40px;
+    }
+
+    .relatedPostsContainer ul {
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .relatedPostsContainer ul a {
+        flex: 1 1 20%;
+
+        height: auto;
+        max-width: 300px
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .authorName p:nth-of-type(1) {
+        font-size: 2vw;
+    }
+
+    .authorName p:nth-of-type(2) {
+        font-size: 2vw;
+    }
+
+    .shareButtons img {
+        width: 23px;
+    }
+
+    .postMainImageBox {
+        margin: 0;
+        width: 100%;
+    }
+
+    .sharingSidebar .shareButtons img {
+        width: 35px;
+    }
+
+    .postContainer {
+        justify-content: center;
+    }
+
+    .postArticle {
+        width: 90%;
+    }
+
+    .sharingSidebar {
+        padding: 20px;
+    }
+
+    .relatedPostsContainer {
+        padding: 20px;
+    }
+
+    .relatedPostsContainer ul a {
+        max-width: 450px;
+        height: 150px;
+    }
+
+    .relatedPostTitle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .authorInfo img {
+        width: 30px;
+        height: auto;
+    }
+
+    .authorName p:nth-of-type(1) {
+        font-size: 3vw;
+    }
+
+    .authorName p:nth-of-type(2) {
+        font-size: 3vw;
+    }
+
+    .shareButtons {
+        gap: 10px
+    }
+
+    .shareButtons img {
+        width: 20px;
+    }
+
+    .postContainer {
+        padding: 10px;
+    }
+
+    .postArticle {
+        width: 100%;
+    }
+
+    .postTitle {
+        font-size: 32px;
+    }
+
+    .postMainImageBox {
+        height: 350px;
+    }
+
+    .postSubtitle {
+        font-size: 18px;
+    }
+
+    .postBody h3 {
+        font-size: 24px;
+    }
+
+    .postBody h4 {
+        font-size: 21px;
+    }
+
+    .postbody li:before {
+        font-size: 21px;
+    }
+
+    .postBody ul,
+    .postBody ol {
+        padding-left: 25px;
+    }
+
+    .postBody .embeddedImage {
+        margin: 20px auto;
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .sharingSidebar h3 {
+        font-size: 24px;
+    }
+
+    .sharingSidebar .shareButtons {
+        gap: 20px
+    }
+
+    .sharingSidebar .shareButtons img {
+        width: 28px;
+    }
 }
