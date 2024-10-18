@@ -15,6 +15,7 @@
 .footerLogoContainer {
     height: 100%;
     width: 200px;
+    align-self: center;
 }
 
 .footerLogoContainer img {
