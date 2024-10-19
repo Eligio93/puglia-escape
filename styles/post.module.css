@@ -249,6 +249,10 @@
     display: none;
 }
 
+.postBody .sharingSidebar hr {
+    display: none;
+}
+
 .stickySidebarWrapper {
     position: absolute;
     top: 0px;
@@ -276,7 +280,7 @@
     flex-direction: column;
 }
 
-.postBody.sharingSidebar .shareButtons img {
+.postBody .sharingSidebar .shareButtons img {
     width: 35px;
     height: auto;
     transition: transform 200ms linear;
