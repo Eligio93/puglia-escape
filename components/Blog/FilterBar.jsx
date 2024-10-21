@@ -1,13 +1,19 @@
 'use client'
 import { useSearchParams, useRouter } from "next/navigation"
 import styles from '@/styles/blog.module.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function FilterBar({ tags }) {
-    const [selectedCategory,setSelectedCategory] = useState(null)
-    const router = useRouter();
     const searchParams = useSearchParams();
+    const [selectedCategory, setSelectedCategory] = useState()
+    const router = useRouter();
+
+
+    useEffect(() => {
+        setSelectedCategory(searchParams.get('category'))
+    }, [searchParams])
+
 
 
 
@@ -52,7 +58,7 @@ export default function FilterBar({ tags }) {
             <section className={styles.filterCategories}>
                 <hr className={styles.divider} data-content="Categories" />
                 <ul className={styles.categoryList}>
-                    <li onClick={() => setCategory(null)} className={selectedCategory === null && styles.selectedCategory}>All</li>
+                    <li onClick={() => setCategory(null)} className={selectedCategory === null ? styles.selectedCategory : undefined}>All</li>
                     {categories.map((category) =>
                         <li key={category} onClick={(e) => setCategory(category)} className={selectedCategory === category ? styles.selectedCategory : ""}>{category}</li>)}
                 </ul>
