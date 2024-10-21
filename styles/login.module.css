@@ -1,6 +1,6 @@
 .login,
 .register {
-    position:relative;
+    position: relative;
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -112,4 +112,80 @@
     gap: 20px;
     padding: 10px;
     border-radius: 5px;
+}
+
+@media (max-width:1280px) {
+
+    .loginContainer,
+    .registerContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .login,
+    .register {
+        padding: 0;
+    }
+
+    .loginContainer,
+    .registerContainer {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .loginImg,
+    .registerImg {
+        border-radius: 0;
+    }
+
+    .loginContainer form,
+    .registerContainer form {
+        border-radius: 0;
+        padding: 30px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .loginContainer,
+    .registerContainer {
+        width: 80%;
+        padding: 50px;
+        box-shadow: none;
+        ;
+    }
+
+    .loginImg,
+    .registerImg {
+        display: none;
+    }
+
+    .loginContainer form,
+    .registerContainer form {
+        width: 100%;
+        padding: 40px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width:500px) {
+
+    .loginContainer,
+    .registerContainer {
+        width: 100%;
+        padding: 0;
+    }
+
+    .loginContainer form,
+    .registerContainer form {
+        padding: 50px;
+        border-radius: 0;
+    }
+
+    .login button,
+    .register button {
+        font-size: 5vw;
+    }
 }
