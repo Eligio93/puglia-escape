@@ -1,7 +1,7 @@
-
 export default function Loading() {
     return (
-        <div style={{minHeight: '100vh'}}>
+        <div className='loading'>
+            <span className="loader"></span>
             <p>Loading...</p>
         </div>
     )
