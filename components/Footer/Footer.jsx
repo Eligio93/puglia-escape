@@ -30,7 +30,7 @@ export default function Footer() {
                     <ul>
                         <p>Puglia Project</p>
                         <Link href='/about'><li>About</li></Link>
-                        <a href="mailto:info@pugliaproject.com">info@pugliaproject.com</a>
+                        <a href="mailto:hello@frompuglia.com">hello@frompuglia.com</a>
                     </ul>
 
                 </div>
