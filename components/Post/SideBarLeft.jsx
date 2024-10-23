@@ -23,7 +23,7 @@ export default async function SideBarLeft() {
                                         width={post.fields.mainImage.fields.file.details.image.width}
                                     />
                                 </div>
-                                <p className={styles.featuredPostTitle} style={{ width: '60%' }}> {post.fields.postTitle}</p>
+                                <p className={styles.featuredPostTitle}> {post.fields.postTitle}</p>
                             </li>
                         </Link>)}
                 </ul>
