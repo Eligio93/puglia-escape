@@ -3,8 +3,9 @@ import Link from "next/link";
 import styles from '@/styles/blog.module.css'
 import { format } from "date-fns";
 
+
+
 export default async function BlogPosts({ posts }) {
-    // console.log(posts[0].fields.postAuthor.fields.authorPicture)
     return (
         <div className={styles.blogPosts} >
             {posts.length > 0 && posts.map((post) => <Link href={'/posts/' + post.fields.postSlug} key={post.sys.id} className={styles.blogPost}>
@@ -13,7 +14,7 @@ export default async function BlogPosts({ posts }) {
                         src={'https:' + post.fields.mainImage.fields.file.url}
                         alt="prova descrizione"
                         fill={true}
-                    //needs to add sizes
+                    //needs to add sizes or check if in the image there are dimensions
                     />
                 </div>
                 <p className={styles.blogPostDate}>{format(post.fields.publishingDate, 'MMMM dd, yyyy')}</p>     {/*date needs to be formatted with date-fns*/}
