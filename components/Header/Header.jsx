@@ -17,7 +17,7 @@ export default function Header() {
                 <ul className={styles.headerNavList}>
                     <Link href='/'><li>Home</li></Link>
                     <Link href='/blog'><li>Blog</li></Link>
-                    <Link href='/guides'><li>Guides</li></Link>
+                    {/* <Link href='/guides'><li>Guides</li></Link> */}
                     <Link href='/blog?category=Events'><li>Events</li></Link>
                     <Link href='/about'><li>About</li></Link>
                 </ul>
@@ -30,7 +30,7 @@ export default function Header() {
             </Link>
 
             <SearchBar />
-            <AuthSection />
+            {/* <AuthSection /> */}
 
 
 
