@@ -4,7 +4,7 @@
     width: 100%;
     position: sticky;
     top: 0;
-    padding: 0 20px;
+    padding: 0 50px;
     display: flex;
     align-items: center;
     background-color: var(--blue);
@@ -30,7 +30,7 @@
 
 /*-----SITE LOGO-----*/
 .pugliaProjectLogo {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     justify-content: center;
 }
@@ -44,6 +44,9 @@
 }
 
 /*-----HEADER MENU-----*/
+.headerNav{
+    flex:1;
+}
 .headerNavList {
     display: flex;
     align-items: center;
@@ -58,6 +61,7 @@
 /*-----SOCIAL AND AUTH SECTION-----*/
 
 .searchbar {
+    flex:1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -151,6 +155,9 @@
 
 
 @media (max-width: 1024px) {
+    .header{
+        padding:0 30px;
+    }
     .headerNav {
         flex: 1;
     }
@@ -171,6 +178,9 @@
 }
 
 @media (max-width: 950px) {
+    .header{
+        padding:0 20px;
+    }
     .headerNav {
         display: none;
     }
@@ -247,20 +257,31 @@
         font-size: 15px;
         padding: 5px;
     }
+    
+    /*This is been commented out as auth section is not still available
 
-    .header .searchbar {
+    /* .header .searchbar {
         display: none;
     }
 
     .mobileMenu .searchbar {
         display: flex;
 
-    }
+    } */
 }
 
 @media (max-width: 480px) {
     .header {
         justify-content: space-between;
         gap: 0;
+        padding:0 10px 0 20px;
+    }
+        .header .searchbar {
+        display: none;
+    }
+
+    .mobileMenu .searchbar {
+        display: flex;
+
     }
 }
