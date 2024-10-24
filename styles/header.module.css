@@ -44,9 +44,10 @@
 }
 
 /*-----HEADER MENU-----*/
-.headerNav{
-    flex:1;
+.headerNav {
+    flex: 1;
 }
+
 .headerNavList {
     display: flex;
     align-items: center;
@@ -61,7 +62,7 @@
 /*-----SOCIAL AND AUTH SECTION-----*/
 
 .searchbar {
-    flex:1;
+    flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -155,9 +156,10 @@
 
 
 @media (max-width: 1024px) {
-    .header{
-        padding:0 30px;
+    .header {
+        padding: 0 30px;
     }
+
     .headerNav {
         flex: 1;
     }
@@ -178,9 +180,10 @@
 }
 
 @media (max-width: 950px) {
-    .header{
-        padding:0 20px;
+    .header {
+        padding: 0 20px;
     }
+
     .headerNav {
         display: none;
     }
@@ -257,7 +260,7 @@
         font-size: 15px;
         padding: 5px;
     }
-    
+
     /*This is been commented out as auth section is not still available
 
     /* .header .searchbar {
@@ -274,14 +277,19 @@
     .header {
         justify-content: space-between;
         gap: 0;
-        padding:0 10px 0 20px;
+        padding: 0 10px 0 20px;
     }
-        .header .searchbar {
+
+    .header .searchbar {
         display: none;
+    }
+    .mobileMenuNav{
+        padding:10px;
     }
 
     .mobileMenu .searchbar {
         display: flex;
+        margin:0;
 
     }
 }
