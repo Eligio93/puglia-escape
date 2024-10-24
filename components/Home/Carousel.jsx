@@ -29,7 +29,7 @@ export default function EmblaCarousel({ posts }) {
 
             <div className={styles.embla__viewport} ref={emblaRef}>
                 <div className={styles.embla__container}>
-                    {posts.map((post) => <Link  href={'/posts/' + post.fields.postSlug} key={post.sys.id} className={styles.embla__slide}>
+                    {posts.map((post) => <Link href={'/posts/' + post.fields.postSlug} key={post.sys.id} className={styles.embla__slide}>
                         <Image
                             className={styles.carouselImg}
                             src={'https:' + post.fields.mainImage.fields.file.url}
@@ -42,6 +42,11 @@ export default function EmblaCarousel({ posts }) {
                             <p className={styles.carouselPostTitle}>{post.fields.postTitle}</p>
                             <hr />
                             <p className={styles.carouselPostSubtitle}>{post.fields.postSubtitle}</p>
+                            <div className={styles.carouselPostFooter}>
+
+                                <p>{post.fields.postAuthor.fields.authorName}</p>
+                                <p>{post.fields.readingTime + ' min read'}</p>
+                            </div>
                         </div>
 
                     </Link>)}
