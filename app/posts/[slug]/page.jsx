@@ -53,41 +53,13 @@ export default async function Post({ params }) {
                 </article>
             </div>
             <SharingSidebar />
+            {relatedPosts && relatedPosts.length > 0 &&
+                <section className={styles.relatedPostsContainer} >
+                    <h2>Related Posts</h2>
+                    <hr />
+                    <ul>
+                        {relatedPosts && relatedPosts.map((post) =>
 
-            <section className={styles.relatedPostsContainer} >
-                <h2>Related Posts</h2>
-                <hr />
-                <ul>
-                    {relatedPosts && relatedPosts.map((post) =>
-                        <>
-                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
-                                <li className={styles.relatedPost}>
-                                    <div className={styles.relatedPostImage}>
-                                        <Image
-                                            src={'https:' + post.fields.mainImage.fields.file.url}
-                                            alt={post.fields.mainImage.fields.description}
-                                            height={post.fields.mainImage.fields.file.details.image.height}
-                                            width={post.fields.mainImage.fields.file.details.image.width}
-                                        />
-                                    </div>
-                                    <p className={styles.relatedPostTitle}>Polignano a Mare: Where the Sea Meets Magic</p>
-
-                                </li>
-                            </Link>
-                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
-                                <li className={styles.relatedPost}>
-                                    <div className={styles.relatedPostImage}>
-                                        <Image
-                                            src={'https:' + post.fields.mainImage.fields.file.url}
-                                            alt={post.fields.mainImage.fields.description}
-                                            height={post.fields.mainImage.fields.file.details.image.height}
-                                            width={post.fields.mainImage.fields.file.details.image.width}
-                                        />
-                                    </div>
-                                    <p>{post.fields.postTitle}</p>
-
-                                </li>
-                            </Link>
                             <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
                                 <li className={styles.relatedPost}>
                                     <div className={styles.relatedPostImage}>
@@ -102,12 +74,11 @@ export default async function Post({ params }) {
 
                                 </li>
                             </Link>
-                        </>
-                    )}
-                </ul>
+                        )}
+                    </ul>
+                </section >
+            }
 
-
-            </section >
         </>
     )
 }
