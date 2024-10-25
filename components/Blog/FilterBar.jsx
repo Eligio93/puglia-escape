@@ -7,11 +7,12 @@ import { useEffect, useState } from "react";
 export default function FilterBar({ tags }) {
     const searchParams = useSearchParams();
     const [selectedCategory, setSelectedCategory] = useState()
+    const [selectedCity, setSelectedCity] = useState()
     const router = useRouter();
-
 
     useEffect(() => {
         setSelectedCategory(searchParams.get('category'))
+        setSelectedCity(searchParams.get('city'))
     }, [searchParams])
 
 
@@ -20,7 +21,9 @@ export default function FilterBar({ tags }) {
     //get the categories from the tags
     const categories = tags.items.filter((tag) => tag.name.startsWith('Category:')).map((tag) => tag.name.split(': ')[1])
     //get the cities from the tags
-    const cities = tags.items.filter((tag) => tag.name.startsWith('City:')).map((tag) => tag.name.split(': ')[1])
+    let cities = tags.items.filter((tag) => tag.name.startsWith('City:')).map((tag) => tag.name.split(': ')[1]);
+    //sort cities alphabetically
+    cities = cities.sort();
 
 
 
@@ -66,8 +69,8 @@ export default function FilterBar({ tags }) {
             <section className={styles.filterCities}>
                 <hr className={styles.divider} data-content="Cities" />
                 <select name="cityQuery" onChange={setCityQuery}>
-                    <option value="">All</option>
-                    {cities.map((city) => <option key={city} value={city} >{city}</option>)}
+                    <option value="" selected={selectedCity === null}>All</option>
+                    {cities.map((city) => <option key={city} value={city} selected={selectedCity === city} >{city}</option>)}
                 </select>
             </section>
         </aside>
