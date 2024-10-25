@@ -20,7 +20,7 @@ export default function SearchBar() {
     return (
         <form className={styles.searchbar}>
             <label htmlFor="searchBar">
-                <input type="text" name='searchValue' id='searchBar' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+                <input type="text" name='searchValue' id='searchBar' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder='Search Posts ...' />
             </label>
             <button className={styles.searchBtn} type='submit' onClick={handleSearch}>
                 <Image
