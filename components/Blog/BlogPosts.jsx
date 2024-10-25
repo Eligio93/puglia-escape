@@ -12,9 +12,9 @@ export default async function BlogPosts({ posts }) {
                 <div className={styles.blogPostCover}>
                     <Image
                         src={'https:' + post.fields.mainImage.fields.file.url}
-                        alt="prova descrizione"
-                        fill={true}
-                    //needs to add sizes or check if in the image there are dimensions
+                        alt={post.fields.mainImage.fields.description}
+                        height={post.fields.mainImage.fields.file.details.image.height}
+                        width={post.fields.mainImage.fields.file.details.image.width}
                     />
                 </div>
                 <p className={styles.blogPostDate}>{format(post.fields.publishingDate, 'MMMM dd, yyyy')}</p>     {/*date needs to be formatted with date-fns*/}

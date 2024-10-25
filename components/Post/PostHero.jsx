@@ -2,6 +2,7 @@ import style from '@/styles/post.module.css'
 import Image from 'next/image'
 
 export default function PostHero({ post }) {
+    console.log(post.items[0].fields.mainImage.fields.file.details.image)
     return (
         <>
             <section className={style.postHero}>
@@ -11,7 +12,8 @@ export default function PostHero({ post }) {
                         className={style.postMainImage}
                         src={'https:' + post.items[0].fields.mainImage.fields.file.url}
                         alt={post.items[0].fields.mainImage.fields.description}
-                        fill={true}
+                        height={post.items[0].fields.mainImage.fields.file.details.image.height}
+                        width={post.items[0].fields.mainImage.fields.file.details.image.width}
                     />
                 </div>
                 <h2 className={style.postSubtitle}>{post.items[0].fields.postSubtitle}</h2>
