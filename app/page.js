@@ -28,7 +28,8 @@ export default function Home() {
           priority
         />
         <section className={styles.heroDescription}>
-          FROM PUGLIA<br></br> Your Guide to Puglia, to Dive Into the Heel of Italy’s Coastlines, Culture, and Culinary Secrets.
+          <p>FROM PUGLIA</p>
+          <h1>Your Guide to Puglia, to Dive Into the Heel of Italy’s Coastlines, Culture, and Culinary Secrets.</h1>
           <Link href='/blog' className={styles.exploreBlogBtn}>Explore Blog</Link>
         </section>
       </div>
