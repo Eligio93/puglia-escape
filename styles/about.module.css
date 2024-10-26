@@ -1,0 +1,98 @@
+.about {
+    display: flex;
+    min-height: calc(100vh - 100px);
+    gap: 50px;
+}
+
+.aboutInfo {
+    width: 50%;
+    padding: 10% 0 10% 10%;
+}
+
+.aboutInfo h1 {
+    font-size: 52px;
+    color: var(--dark-blue);
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.aboutInfo p {
+    font-size: 24px;
+    color: var(--dark-blue);
+}
+
+.aboutContact {
+    position: relative;
+    width: 50%;
+    padding: 0 10% 0 0;
+}
+
+.aboutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-blue);
+    width: 100%;
+    height: 100%;
+    padding: 10% 10% 5% 10%;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    height: calc(100% - 10%);
+}
+
+.aboutForm h2 {
+    font-size: 38px;
+    color: var(--dark-blue);
+    color: white;
+    margin-bottom: 50px;
+}
+
+.aboutForm label {
+    align-self: flex-start;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aboutForm input {
+    width: 100%;
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 10px 0
+}
+
+.aboutForm textarea {
+    width: 100%;
+    background-color: rgba(1, 120, 195, 0.5);
+    height: 100px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10%;
+    padding: 10px 0;
+    flex:1;
+}
+
+.aboutForm button {
+    align-self: flex-end;
+    padding: 15px;
+    border-radius: 999px;
+    min-width: 200px;
+    font-size: 20px;
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    transition: background-color 150ms ease-in-out
+}
+
+.aboutForm button:hover {
+    background-color: var(--teal);
+
+}
