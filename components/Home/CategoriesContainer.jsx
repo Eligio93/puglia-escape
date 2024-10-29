@@ -22,7 +22,6 @@ export default function CategoriesContainer() {
                     <div className={styles.categoryCta}>
                         Eat and Drink
                     </div>
-                    {/* <div className={styles.cover}></div> */}
                 </Link>
 
                 <Link href={'/blog?category=Experience'} className={styles.category}>
