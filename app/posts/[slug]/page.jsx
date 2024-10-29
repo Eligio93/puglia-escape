@@ -57,23 +57,23 @@ export default async function Post({ params }) {
                 <section className={styles.relatedPostsContainer} >
                     <h2>Related Posts</h2>
                     <hr />
-                    <ul>
+                    <ul className={styles.relatedPostsList}>
                         {relatedPosts && relatedPosts.map((post) =>
-
-                            <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
-                                <li className={styles.relatedPost}>
-                                    <div className={styles.relatedPostImage}>
-                                        <Image
-                                            src={'https:' + post.fields.mainImage.fields.file.url}
-                                            alt={post.fields.mainImage.fields.description}
-                                            height={post.fields.mainImage.fields.file.details.image.height}
-                                            width={post.fields.mainImage.fields.file.details.image.width}
-                                        />
-                                    </div>
-                                    <p className={styles.relatedPostTitle}>{post.fields.postTitle}</p>
-
+                            <>
+                                <li key={post.sys.id}>
+                                    <Link className={styles.relatedPost} href={`/posts/${post.fields.postSlug}`}>
+                                        <div className={styles.relatedPostImage}>
+                                            <Image
+                                                src={'https:' + post.fields.mainImage.fields.file.url}
+                                                alt={post.fields.mainImage.fields.description}
+                                                height={post.fields.mainImage.fields.file.details.image.height}
+                                                width={post.fields.mainImage.fields.file.details.image.width}
+                                            />
+                                        </div>
+                                        <p className={styles.relatedPostTitle}>{post.fields.postTitle}</p>
+                                    </Link>
                                 </li>
-                            </Link>
+                            </>
                         )}
                     </ul>
                 </section >
