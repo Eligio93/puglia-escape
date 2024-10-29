@@ -39,10 +39,10 @@
 .featuredPost {
     display: flex;
     gap: 10px;
-    height: 100px;
+    height: 130px;
     width: 100%;
     border: 1px solid var(--dark-blue);
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .featuredPostImage {
@@ -233,13 +233,12 @@
 }
 
 .postBody a {
-    color: var(--dark-blue);
+    color: var(--blue);
     font-weight: 600;
 }
 
 .postBody a:hover {
     text-decoration: underline;
-    color: var(--blue);
 }
 
 
@@ -300,26 +299,26 @@
     margin-bottom: 20px
 }
 
-.relatedPostsContainer ul {
-    width: 80%;
+.relatedPostsList {
+    width: 90%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 20px;
+    list-style-type: none;
 }
 
-.relatedPostsContainer ul a {
-    flex: 1 1 28%;
-    height: auto;
-    min-width: 300px
+.relatedPostsList li {
+    flex: 1 1 30%;
+    max-width: 30%;
+    height: 200px;
 }
 
 .relatedPost {
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
     gap: 10px;
     color: white;
     font-weight: bold;
@@ -339,6 +338,7 @@
 }
 
 .relatedPostImage img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -347,8 +347,10 @@
 
 .relatedPostTitle {
     width: 50%;
-    font-size: 20px;
+    height: 100%;
+    font-size: 22px;
     padding: 10px 10px 10px 0;
+    align-content: center;
 
 }
 
@@ -378,10 +380,6 @@
 
     .relatedPostContainer>h2 {
         font-size: 30px;
-    }
-
-    .relatedPostTitle {
-        font-size: 18px;
     }
 }
 
@@ -422,17 +420,15 @@
         width: 40px;
     }
 
-    .relatedPostsContainer ul {
+    .relatedPostsList {
         justify-content: center;
         width: 100%;
         margin-top: 20px;
     }
 
-    .relatedPostsContainer ul a {
-        flex: 1 1 20%;
-
-        height: auto;
-        max-width: 300px
+    .relatedPostsList li {
+        flex: 1 1 40%;
+        max-width: 40%;
     }
 
 }
@@ -476,13 +472,17 @@
         padding: 20px;
     }
 
-    .relatedPostsContainer ul a {
-        max-width: 450px;
-        height: 150px;
-    }
+
 
     .relatedPostTitle {
         font-size: 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .relatedPostsList li {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
