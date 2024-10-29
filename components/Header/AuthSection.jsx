@@ -6,7 +6,6 @@ import { useSession } from "next-auth/react"
 import { signOut } from "next-auth/react"
 export default function AuthSection() {
     const session = useSession()
-    console.log(session)
     return (
         <div className={styles.authSection}>
             {session.status == 'unauthenticated' &&
