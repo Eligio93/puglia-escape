@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
     const requestBody = await request.json();
-    const { name, lastName, email, message } = requestBody;
+    let { name, lastName, email, message } = requestBody;
     
     //Sanitize Data
     name = validator.escape(name.trim())
