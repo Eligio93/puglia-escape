@@ -15,36 +15,42 @@ import { usePathname } from 'next/navigation'
 //LINKEDIN: https://www.linkedin.com/shareArticle
 
 export default function ShareButtons() {
-    const path = 'http://localhost:3000' + usePathname();
+    const path = 'https://puglia-escape.vercel.app' + usePathname();
     return (
         <div className={style.shareButtons}>
+            {/* <p style={{opacity:0.8, fontSize:'12px'}}>Link copied to clipboard</p>
             <Image
                 src={copyUrlIcon}
                 alt='copy url icon'
-                title='Copy URL' />
-            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(path)}`}>
-            <Image
-                src={facebookIcon}
-                alt='facebook icon'
-                title='Share on Facebook'
-            />
+                title='Copy URL' /> */}
+            <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(path)}`}>
+                <Image
+                    src={facebookIcon}
+                    alt='facebook icon'
+                    title='Share on Facebook'
+                />
             </a>
-            <Image
-                src={whatsappIcon}
-                alt='whatsapp icon'
-                title='Share on WhatsApp'
-            />
-
-            <Image
-                src={linkedinIcon}
-                alt='linkedin icon'
-                title='Share on LinkedIn'
-            />
-            <Image
-                src={xIcon}
-                alt='x icon'
-                title='Share on X'
-            />
+            <a href={`https://api.whatsapp.com/send?text=${encodeURI(path)}`} target="_blank" rel="noopener noreferrer">
+                <Image
+                    src={whatsappIcon}
+                    alt='whatsapp icon'
+                    title='Share on WhatsApp'
+                />
+            </a>
+            <a href={`https://www.linkedin.com/shareArticle?mini=false&url=${encodeURI(path)}`} target="_blank" rel="noopener noreferrer">
+                <Image
+                    src={linkedinIcon}
+                    alt='linkedin icon'
+                    title='Share on LinkedIn'
+                />
+            </a>
+            <a target="_blank" href={`https://twitter.com/intent/tweet?url=${encodeURI(path)}`}>
+                <Image
+                    src={xIcon}
+                    alt='x icon'
+                    title='Share on X'
+                />
+            </a>
 
         </div>
     )
