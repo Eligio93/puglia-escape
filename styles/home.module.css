@@ -24,19 +24,16 @@
     background: linear-gradient(to right, rgb(5, 47, 63) 0%, rgba(0, 0, 0, 0) 100%);
     width: 50%;
     height: 100%;
-    /*timing-function delay iteration-count direction fill-mode*/
 }
 
 .heroDescription p,
 .heroDescription h1 {
     font-size: 52px;
-    animation: slideleft 2s
-        /*timing-function delay iteration-count direction fill-mode*/
-    ;
+    animation: fadein 2s    ;
 
 }
 
-@keyframes slideleft {
+@keyframes fadein {
     from {
         opacity: 0;
     }
