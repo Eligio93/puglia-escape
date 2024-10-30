@@ -28,7 +28,6 @@
     color: var(--dark-blue);
     font-weight: 600;
     transition: all 200ms ease-in-out;
-    border-radius: 10px;
 }
 
 .featuredPosts a:hover {
@@ -42,7 +41,6 @@
     height: 130px;
     width: 100%;
     border: 1px solid var(--dark-blue);
-    /* border-radius: 10px; */
 }
 
 .featuredPostImage {
