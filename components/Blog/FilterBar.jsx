@@ -68,9 +68,9 @@ export default function FilterBar({ tags }) {
             </section>
             <section className={styles.filterCities}>
                 <hr className={styles.divider} data-content="Cities" />
-                <select name="cityQuery" onChange={setCityQuery}>
-                    <option value="" selected={selectedCity === null}>All</option>
-                    {cities.map((city) => <option key={city} value={city} selected={selectedCity === city} >{city}</option>)}
+                <select name="cityQuery" onChange={setCityQuery} value={selectedCity || ''}>
+                    <option value="">All</option>
+                    {cities.map((city) => <option key={city} value={city}>{city}</option>)}
                 </select>
             </section>
         </aside>
