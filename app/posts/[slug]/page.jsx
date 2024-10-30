@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
             //page description
             description: post.items[0].fields.seo.fields.seoDescription,
             //url del sito 'https://pugliaProject.com
-            url: 'https://localhost:3000',
+            url: 'https://puglia-escape.vercel.app/' + slug,
             //Name of the site
             siteName: 'From Puglia',
             //type is article
@@ -30,8 +30,8 @@ export async function generateMetadata({ params }) {
             // image must m
             images: [{
                 url: 'https:' + post.items[0].fields.seo.fields.ogimage.fields.file.url,//must be an absolute URL so https://url.com
-                width: 1260,
-                height: 800
+                width: /*1260*/ post.items[0].fields.seo.fields.ogimage.fields.file.details.image.width,
+                height: /*800*/ post.items[0].fields.seo.fields.ogimage.fields.file.details.image.height
             }],
             //locale e la lingua
             locale: 'en-US'
