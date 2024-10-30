@@ -15,11 +15,11 @@ export default function Header() {
 
             <nav className={styles.headerNav}>
                 <ul className={styles.headerNavList}>
-                    <Link href='/'><li>Home</li></Link>
-                    <Link href='/blog'><li>Blog</li></Link>
+                    <li><Link href='/'>Home</Link></li>
+                    <li><Link href='/blog'>Blog</Link></li>
                     {/* <Link href='/guides'><li>Guides</li></Link> */}
-                    <Link href='/blog?category=Events'><li>Events</li></Link>
-                    <Link href='/about'><li>About</li></Link>
+                    <li> <Link href='/blog?category=Events'>Events</Link></li>
+                    <li><Link href='/about'>About</Link></li>
                 </ul>
             </nav>
             <Link href='/' className={styles.pugliaProjectLogo}>

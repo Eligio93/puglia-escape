@@ -13,8 +13,8 @@ export default async function SideBarLeft() {
                 <hr className={styles.divider} data-content="Featured Posts" />
                 <ul>
                     {featuredPosts.items.map((post) =>
-                        <Link key={post.sys.id} href={`/posts/${post.fields.postSlug}`}>
-                            <li className={styles.featuredPost}>
+                        <li key={post.sys.id} >
+                            <Link href={`/posts/${post.fields.postSlug}`} className={styles.featuredPost}>
                                 <div className={styles.featuredPostImage}>
                                     <Image
                                         src={'https:' + post.fields.mainImage.fields.file.url}
@@ -24,8 +24,8 @@ export default async function SideBarLeft() {
                                     />
                                 </div>
                                 <p className={styles.featuredPostTitle}> {post.fields.postTitle}</p>
-                            </li>
-                        </Link>)}
+                            </Link>
+                        </li>)}
                 </ul>
             </section>
             {/* <section>
