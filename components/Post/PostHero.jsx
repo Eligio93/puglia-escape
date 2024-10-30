@@ -2,7 +2,6 @@ import style from '@/styles/post.module.css'
 import Image from 'next/image'
 
 export default function PostHero({ post }) {
-    console.log(post.items[0].fields.mainImage.fields.file.details.image)
     return (
         <>
             <section className={style.postHero}>
