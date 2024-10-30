@@ -19,9 +19,9 @@ export default function CategoriesContainer() {
                         src={categoryEatDrinkImage}
                         alt='A dinner table on the beach'
                     />
-                    <div className={styles.categoryCta}>
+                    <p className={styles.categoryCta}>
                         Eat and Drink
-                    </div>
+                    </p>
                 </Link>
 
                 <Link href={'/blog?category=Experience'} className={styles.category}>
@@ -29,9 +29,9 @@ export default function CategoriesContainer() {
                         src={categoryExperienceImage}
                         alt='A person heading to the beach'
                     />
-                    <div className={styles.categoryCta}>
+                    <p className={styles.categoryCta}>
                         Experience
-                    </div>
+                    </p>
 
                 </Link>
 
@@ -41,9 +41,9 @@ export default function CategoriesContainer() {
                         src={categoryDiscoverImage}
                         alt='Trullo at night with stars'
                     />
-                    <div className={styles.categoryCta}>
+                    <p className={styles.categoryCta}>
                         Discover
-                    </div>
+                    </p>
 
                 </Link>
                 <Link href={'/blog?category=Events'} className={styles.category}>
@@ -51,9 +51,9 @@ export default function CategoriesContainer() {
                         src={categoryEventsImage}
                         alt='Picture of the Polifonic Event in Puglia'
                     />
-                    <div className={styles.categoryCta}>
+                    <p className={styles.categoryCta}>
                         Events
-                    </div>
+                    </p>
 
 
                 </Link>
