@@ -55,7 +55,7 @@
     list-style-type: none;
 }
 
-.headerNavList li {
+.headerNavList li a {
     color: white;
 }
 
@@ -68,9 +68,10 @@
     align-items: center;
     gap: 10px;
 }
-.searchbar input::placeholder{
-    color:white;
-    opacity:0.7
+
+.searchbar input::placeholder {
+    color: white;
+    opacity: 0.7
 }
 
 .searchbar input {
@@ -287,13 +288,14 @@
     .header .searchbar {
         display: none;
     }
-    .mobileMenuNav{
-        padding:10px;
+
+    .mobileMenuNav {
+        padding: 10px;
     }
 
     .mobileMenu .searchbar {
         display: flex;
-        margin:0;
+        margin: 0;
 
     }
 }
