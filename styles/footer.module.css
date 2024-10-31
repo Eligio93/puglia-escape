@@ -32,7 +32,7 @@
     justify-content: space-evenly;
 }
 
-.footerInfo p {
+.footerInfo li:nth-child(1) {
     font-weight: bold;
 }
 

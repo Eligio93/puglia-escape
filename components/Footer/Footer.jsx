@@ -21,16 +21,16 @@ export default function Footer() {
                 </div>
                 <div className={style.footerInfo}>
                     <ul>
-                        <p>Blog</p>
-                        <Link href='/blog?category=Eat+And+Drink'><li>Eat And Drink</li></Link>
-                        <Link href='/blog?category=Experience'><li>Experience</li></Link>
-                        <Link href='/blog?category=Events'><li>Events</li></Link>
-                        <Link href='/blog?category=Discover'><li>Discover</li></Link>
+                        <li>Blog</li>
+                        <li><Link href='/blog?category=Eat+And+Drink'>Eat And Drink</Link></li>
+                        <li><Link href='/blog?category=Experience'>Experience</Link></li>
+                        <li><Link href='/blog?category=Events'>Events</Link></li>
+                        <li><Link href='/blog?category=Discover'>Discover</Link></li>
                     </ul>
                     <ul>
-                        <p>From Puglia</p>
-                        <Link href='/about'><li>About</li></Link>
-                        <a href="mailto:hello@frompuglia.com">hello@frompuglia.com</a>
+                        <li>From Puglia</li>
+                        <li><Link href='/about'>About</Link></li>
+                        <li><a href="mailto:hello@frompuglia.com">hello@frompuglia.com</a></li>
                     </ul>
 
                 </div>
