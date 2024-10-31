@@ -35,6 +35,13 @@ export async function generateMetadata({ params }) {
             }],
             //locale e la lingua
             locale: 'en-US'
+        },
+        twitter:{
+            card:'summary_large_image',
+            title:post.items[0].fields.postTitle,
+            description:post.items[0].fields.seo.fields.seoDescription,
+            image:'https:' + post.items[0].fields.seo.fields.ogimage.fields.file.url,
+            alt:post.items[0].fields.seo.fields.ogimage.fields.description
         }
     }
 }
