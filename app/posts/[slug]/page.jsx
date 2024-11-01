@@ -21,8 +21,8 @@ export async function generateMetadata({ params }) {
             title: post.items[0].fields.postTitle,
             //page description
             description: post.items[0].fields.seo.fields.seoDescription,
-            //url del sito 'https://pugliaProject.com
-            url: 'https://puglia-escape.vercel.app/' + slug,
+            //url del sito 'https://frompuglia.com'
+            url: `${process.env.NEXT_PUBLIC_URL}` + slug,
             //Name of the site
             siteName: 'From Puglia',
             //type is article
