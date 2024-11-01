@@ -26,19 +26,27 @@ export default function About() {
     async function handleSubmit(e) {
         e.preventDefault();
         setLoading(true)
-        const response = await axios.post('http://localhost:3000/api/submit-contact-form', data)
-        if (response.status === 200) {
+        try {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/submit-contact-form`, data);
+            if (response.status === 200) {
+                setTimeout(() => {
+                    setSuccess(true);
+                    setLoading(false);
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    setSuccess(false);
+                    setLoading(false);
+                }, 1000);
+            }
+        } catch (error) {
             setTimeout(() => {
-                setSuccess(true)
-                setLoading(false)
-            }, 1000)
-        } else {
-            setTimeout(() => {
-                setSuccess(false)
-                setLoading(false)
-            }, 1000)
+                setSuccess(false);
+                setLoading(false);
+            }, 1000);
         }
-    }
+    };
+
     return (
         <>
             <title>About - From Puglia</title>
