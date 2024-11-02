@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
+import {GoogleAnalytics} from '@next/third-parties/google'
 import './global.css'
 
 
@@ -19,6 +20,7 @@ export default async function RootLayout({ children }) {
           {children}
           <Footer />
         </body>
+        <GoogleAnalytics gaId="G-5GSNTYQ0MZ" />
       </html>
     </SessionProvider>
   );
