@@ -15,7 +15,7 @@ import { usePathname } from 'next/navigation'
 //LINKEDIN: https://www.linkedin.com/shareArticle
 
 export default function ShareButtons() {
-    const path = 'https://puglia-escape.vercel.app' + usePathname();
+    const path = process.env.NEXT_PUBLIC_SITE_URL + usePathname();
     return (
         <div className={style.shareButtons}>
             {/* <p style={{opacity:0.8, fontSize:'12px'}}>Link copied to clipboard</p>

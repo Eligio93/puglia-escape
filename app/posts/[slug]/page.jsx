@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
             //page description
             description: post.items[0].fields.seo.fields.seoDescription,
             //url del sito 'https://frompuglia.com'
-            url: `${process.env.NEXT_PUBLIC_URL}` + slug,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}` + slug,
             //Name of the site
             siteName: 'From Puglia',
             //type is article

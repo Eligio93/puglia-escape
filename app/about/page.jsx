@@ -27,7 +27,7 @@ export default function About() {
         e.preventDefault();
         setLoading(true)
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/submit-contact-form`, data);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_SITE_URL}/api/submit-contact-form`, data);
             if (response.status === 200) {
                 setTimeout(() => {
                     setSuccess(true);
