@@ -5,11 +5,9 @@ export default async function sitemap() {
   const postsEntries = posts.map(post => (
     {
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/posts/${post.fields.postSlug}`,
-      lastModified: post.sys.updatedAt
+      lastModified: new Date(post.sys.updatedAt)
     }
   ))
-  console.log(postsEntries)
-
   return [
     {
       url: 'https://frompuglia.com',
