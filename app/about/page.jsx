@@ -51,6 +51,7 @@ export default function About() {
         <>
             <title>About - From Puglia</title>
             <meta name="description" content="Learn more about From Puglia, created by a local, passionate about sharing the best of Puglia. Discover our mission to bring this region from Puglia to the World." />
+            <link rel="canonical" href="https://frompuglia.com/about" />
             <div className={styles.about}>
                 <section className={styles.aboutInfo}>
                     <h1>About FromPuglia.com</h1>

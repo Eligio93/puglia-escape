@@ -45,6 +45,9 @@ export async function generateMetadata({ params }) {
                 alt: post.items[0].fields.seo.fields.ogimage.fields.description
             }
 
+        },
+        alternates:{
+            canonical:`${process.env.NEXT_PUBLIC_SITE_URL}/posts/${slug}`
         }
     }
 }

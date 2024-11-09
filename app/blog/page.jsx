@@ -5,6 +5,9 @@ import styles from '@/styles/blog.module.css'
 export const metadata = {
     title: "Blog - From Puglia",
     description: "Welcome to the From Puglia blog, your go-to source for discovering Puglia. Find articles on must-visit spots, local traditions, and insider travel experiences from the heart of Italy’s heel.",
+    alternates:{
+        canonical:`${process.env.NEXT_PUBLIC_SITE_URL}/blog`
+    }
 };
 
 
