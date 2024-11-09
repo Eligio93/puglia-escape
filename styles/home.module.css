@@ -475,7 +475,7 @@
 @media (max-width: 1280px) {
 
     .heroDescription,
-    .heroDescription h1 {
+    .heroDescription h1, .heroDescription p{
         font-size: 42px;
     }
 
@@ -533,6 +533,9 @@
 }
 
 @media (max-width: 768px) {
+    .heroDescription h1, .heroDescription p{
+        font-size: 36px;
+    }
     .embla__slide {
         flex: 0 0 90%;
         height: 400px;
@@ -613,10 +616,17 @@
 
 @media (max-width: 480px) {
     .heroDescription {
+        text-align: center;
         width: 100%;
         padding-left: 10px;
     }
-
+    .heroDescription h1, .heroDescription p{
+       width: 100%;
+    }
+    .exploreBlogBtn{
+        align-self: center;
+        margin-top:20px;
+    }
     .categoriesContainer p,
     .latestBlogPosts>p,
     .favouriteCities>p {
