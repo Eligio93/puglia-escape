@@ -8,7 +8,7 @@ import FavouriteCities from "@/components/Home/FavouriteCities";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Home - From Puglia",
+  title: "From Puglia to the World: Welcome to Puglia",
   description: "From Puglia, your insider’s guide to Puglia’s stunning coastlines, rich culture, and authentic cuisine. Discover destinations, hidden gems, and travel tips straight from the heel of Italy",
 };
 
