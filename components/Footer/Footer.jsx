@@ -1,4 +1,4 @@
-import projectPugliaLogo from '@/public/pugliaProjectLogo.webp'
+import projectPugliaLogo from '@/public/pugliaProjectLogo.png'
 import style from '@/styles/footer.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
