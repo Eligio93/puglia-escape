@@ -1,173 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@theme {
+  --color-blue: var(--color-sky-600);
+  --color-dark-blue: var(--dark-blue);
+  --color-sand: var(--sand);
+}
+
+@theme inline {
+  --font-dm-sans: var(--dm-sans), sans-serif;
+}
 
 :root {
-    --beige: #F2EADF;
-    --green: #03A688;
-    --light-blue: #94D7F2;
-    --blue: #0178C3;
-    --dark-blue: #052f3f;
-    --teal: #038C8C;
-    --light-orange: #F2B872;
-    --orange: #D98162;
+  --sand: #F2E8D5;
+  --green: #03a688;
+  --light-blue: #94d7f2;
+  --blue: #0178c3;
+  --dark-blue: #052f3f;
+  --teal: #038c8c;
+  --light-orange: #f2b872;
+  --orange: #d98162;
 }
 
 * {
-    font-family: "Open Sans", sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-optical-sizing: auto;
+  box-sizing: border-box;
+
+  font-optical-sizing: auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 html {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-size: 18px;
-    background-color: white;
+  font-size: 18px;
+
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 form input {
-    padding: 5px;
-    border-radius: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 form input:focus {
-    outline: none;
+  outline: none;
 }
 
 .primaryBtn {
-    background-color: var(--blue);
-    color: white;
-    font-weight: 600;
-    border-radius: 5px;
-    padding: 5px 0 5px 0;
-    transition: background-color 150ms ease-in-out
+  background-color: var(--blue);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 5px 0 5px 0;
+  transition: background-color 150ms ease-in-out;
 }
 
 .primaryBtn:hover {
-    background-color: var(--teal);
-
+  background-color: var(--teal);
 }
 
 .error-msg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: rgb(243, 135, 135);
-    border-radius: 5px;
-    padding: 5px;
-    font-weight: 400;
-    animation-name: sliderMessages;
-    animation-duration: 2.5s;
-    animation-fill-mode: none;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
-    animation-timing-function: ease-out;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgb(243, 135, 135);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 400;
+  animation-name: sliderMessages;
+  animation-duration: 2.5s;
+  animation-fill-mode: none;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  text-align: center;
 }
 
 .success-msg {
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    background-color: rgb(169, 233, 179);
-    border-radius: 5px;
-    padding: 5px;
-    font-weight: 400;
-    animation-name: sliderMessages;
-    animation-duration: 1s;
-    animation-fill-mode: none;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
-    animation-timing-function: ease-out;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  background-color: rgb(169, 233, 179);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 400;
+  animation-name: sliderMessages;
+  animation-duration: 1s;
+  animation-fill-mode: none;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
 }
 
 .loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    height: 100vh;
-    margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  margin-top: 15%;
 }
 
 .loader {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: block;
-    position: relative;
-    background: #FFF;
-    box-shadow: -45px 0 #FFF, 45px 0 #FFF;
-    box-sizing: border-box;
-    animation: shadowPulse 2s linear infinite;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background: #fff;
+  box-shadow:
+    -45px 0 #fff,
+    45px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
 }
 
 .loading p {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--dark-blue);
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--dark-blue);
 }
 
 @keyframes shadowPulse {
-    33% {
-        background: #FFF;
-        box-shadow: -45px 0 var(--dark-blue), 45px 0 #FFF;
-    }
+  33% {
+    background: #fff;
+    box-shadow:
+      -45px 0 var(--dark-blue),
+      45px 0 #fff;
+  }
 
-    66% {
-        background: var(--dark-blue);
-        box-shadow: -45px 0 #FFF, 45px 0 #FFF;
-    }
+  66% {
+    background: var(--dark-blue);
+    box-shadow:
+      -45px 0 #fff,
+      45px 0 #fff;
+  }
 
-    100% {
-        background: #FFF;
-        box-shadow: -45px 0 #FFF, 45px 0 var(--dark-blue);
-    }
+  100% {
+    background: #fff;
+    box-shadow:
+      -45px 0 #fff,
+      45px 0 var(--dark-blue);
+  }
 }
-
-
-
 
 @keyframes sliderMessages {
-    0% {
-        transform: translateY(-50px);
-    }
+  0% {
+    transform: translateY(-50px);
+  }
 
-    100% {
-        transform: translateY(0);
-    }
-
+  100% {
+    transform: translateY(0);
+  }
 }
 
-@media (max-width:768px) {
-    .loader {
-        width: 24px;
-        height: 24px;
-    }
+@media (max-width: 768px) {
+  .loader {
+    width: 24px;
+    height: 24px;
+  }
 
-    .loading p {
-        font-size: 18px;
-    }
+  .loading p {
+    font-size: 18px;
+  }
 }
