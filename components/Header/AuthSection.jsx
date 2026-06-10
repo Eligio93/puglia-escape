@@ -1,6 +1,5 @@
 'use client'
 import Link from "next/link"
-import styles from '@/styles/header.module.css'
 import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { signOut } from "next-auth/react"

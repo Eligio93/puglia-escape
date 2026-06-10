@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, DM_Sans } from "next/font/google";
 import SessionProvider from '@/config/Authentication/SessionProvider'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -9,13 +9,14 @@ import './global.css'
 
 
 const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--dm-sans" });
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions)
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} ${dmSans.variable} bg-sand`}>
           <Header />
           {children}
           <Footer />

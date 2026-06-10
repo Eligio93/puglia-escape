@@ -1,59 +1,46 @@
-'use client'
+"use client";
 
-import { usePathname } from 'next/navigation'
-import style from '@/styles/header.module.css'
-import { useState, useEffect } from "react"
-import Image from 'next/image'
-import hamburgerIcon from '@/public/hamburgerIcon.svg'
-import Link from 'next/link'
-import AuthSection from './AuthSection'
-import SearchBar from './Searchbar'
-
-
+import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import SearchBar from "./Searchbar";
+import { Menu } from "lucide-react";
+import NavBar from "./NavBar";
 
 export default function MobileMenu() {
-    const [openMenu, setOpenMenu] = useState(false)
-    const pathName = usePathname()
+  const [openMenu, setOpenMenu] = useState(false);
+  const menuIconRef = useRef();
+  const mobileMenuRef = useRef();
 
+  const pathName = usePathname();
 
-    useEffect(() => {
-        setOpenMenu(false)
-    },[pathName])
+  useEffect(() => {
+    setOpenMenu(false);
+  }, [pathName]);
 
+  useEffect(() => {
+    const handleMouseDown = (event) => {
+      if (menuIconRef.current.contains(event.target)) {
+        return;
+      }
+      if (openMenu && !mobileMenuRef.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleMouseDown);
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, [openMenu]);
 
-    useEffect(() => {
-        const handleMouseDown = (event) => {
-            if (!event.target.closest(`.${style.mobileMenuNav}`) && !event.target.closest(`.${style.mobileMenu}`)) {
-                setOpenMenu(false);
-            }
-        };
-        document.addEventListener('mousedown', handleMouseDown);
-        return () => {
-            document.removeEventListener('mousedown', handleMouseDown);
-        };
-    }, [openMenu]);
-
-
-    
-    return (
-        <div className={style.mobileMenu}>
-            <Image
-                onClick={() => setOpenMenu(!openMenu)}
-                src={hamburgerIcon}
-                alt='Mobile menu icon'
-            />
-            {openMenu ? <nav className={style.mobileMenuNav}>
-                <ul className={style.mobileMenuList}>
-                    <SearchBar  />
-                    <hr />
-                    <Link href='/'><li>Home</li></Link>
-                    <Link href='/blog'><li>Blog</li></Link>
-                    {/* <Link href='/guides'><li>Guides</li></Link> */}
-                    <Link href='/blog?category=Events'><li>Events</li></Link>
-                    <Link href='/about'><li>About</li></Link>
-                </ul>
-            </nav> : null}
-
-        </div>
-    )
+  return (
+    <div className="h-full lg:hidden">
+      <Menu
+        onClick={() => setOpenMenu(!openMenu)}
+        className="h-full w-auto cursor-pointer p-2 text-dark-blue"
+        ref={menuIconRef}
+      />
+      <NavBar ref={mobileMenuRef} variant="mobile" openMenu={openMenu} />
+    </div>
+  );
 }

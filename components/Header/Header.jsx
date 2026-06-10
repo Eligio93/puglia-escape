@@ -1,40 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/header.module.css";
 import SearchBar from "./Searchbar";
-import AuthSection from "./AuthSection";
-import pugliaProjectLogo from "@/public/pugliaProjectLogo.png";
+import pugliaProjectLogo from "@/public/pugliaProjectLogoFull.png";
 import MobileMenu from "./MobileMenu";
+import NavBar from "./NavBar";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <MobileMenu />
-
-      <nav className={styles.headerNav}>
-        <ul className={styles.headerNavList}>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          {/* <Link href='/guides'><li>Guides</li></Link> */}
-          <li>
-            {" "}
-            <Link href="/blog?category=Events">Events</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
-      <Link href="/" className={styles.pugliaProjectLogo}>
-        <Image src={pugliaProjectLogo} alt="logo puglia project" />
+    <header className="bg-sand text-dark-blue font-dm-sans sticky top-0 right-0 z-10 flex h-[50px] items-center justify-between md:h-[60px] lg:h-[70px] lg:px-10">
+      <Link href="/" className="flex h-full w-auto justify-center p-1">
+        <Image
+          src={pugliaProjectLogo}
+          alt="Logo FromPuglia"
+          className="h-full w-auto flex-1"
+        />
       </Link>
-
-      <SearchBar />
-      {/* <AuthSection /> */}
+      <div className="flex items-center gap-20">
+        <NavBar variant="desktop" />
+        <div className="hidden flex-1 lg:block">
+          <SearchBar />
+        </div>
+        <MobileMenu />
+      </div>
     </header>
   );
 }
