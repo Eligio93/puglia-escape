@@ -62,7 +62,7 @@ export default function FilterBar({ tags }) {
         <ul className="flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
           <li
             onClick={() => setCategory(null)}
-            className={` ${selectedCategory === null ? "bg-terracotta font-dm-sans font-semibold text-white" : "border-terracotta"} rounded-full px-4 py-1`}
+            className={` ${selectedCategory === null ? "bg-terracotta font-dm-sans font-semibold text-white" : "border-terracotta font-light"} rounded-full border-1 px-4 py-1 hover:cursor-pointer`}
           >
             All
           </li>
@@ -70,7 +70,7 @@ export default function FilterBar({ tags }) {
             <li
               key={category}
               onClick={(e) => setCategory(category)}
-              className={` ${selectedCategory === category ? "bg-terracotta font-dm-sans font-semibold text-white" : "border-terracotta font-light"} rounded-full border-1 px-4 py-1`}
+              className={` ${selectedCategory === category ? "bg-terracotta font-dm-sans font-semibold text-white" : "border-terracotta font-light"} rounded-full border-1 px-4 py-1 hover:cursor-pointer`}
             >
               {category}
             </li>
