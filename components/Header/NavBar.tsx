@@ -37,7 +37,7 @@ const NavBar = forwardRef<HTMLElement, NavBarProps>(function NavBar(
           {routes.map((route) => (
             <li key={route.name}>
               <Link
-                className="border-b-2 border-b-transparent py-1 text-base transition-colors hover:border-b-dark-blue"
+                className="hover:border-b-terracotta border-b-2 border-b-transparent py-1 text-base transition-colors"
                 href={route.href}
               >
                 {route.name}

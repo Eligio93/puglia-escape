@@ -5,18 +5,25 @@
   --color-blue: var(--color-sky-600);
   --color-dark-blue: var(--dark-blue);
   --color-sand: var(--sand);
+  --color-terracotta: var(--terracotta);
+  --color-warm-cream: var(--warm-cream);
+  --color-warm-stone: var(--warm-stone);
 }
 
 @theme inline {
   --font-dm-sans: var(--dm-sans), sans-serif;
+  --font-source-serif: var(--source-serif), serif;
 }
 
 :root {
-  --sand: #F2E8D5;
+  --warm-cream: #faf5ee;
+  --warm-stone: #f0ebe1;
+  --sand: #f2e8d5;
   --green: #03a688;
   --light-blue: #94d7f2;
   --blue: #0178c3;
   --dark-blue: #052f3f;
+  --terracotta: #c67b5c;
   --teal: #038c8c;
   --light-orange: #f2b872;
   --orange: #d98162;
@@ -26,10 +33,6 @@
   box-sizing: border-box;
 
   font-optical-sizing: auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 input,
@@ -48,12 +51,8 @@ html {
 }
 
 body {
-  height: 100%;
-}
-
-body {
   font-size: 18px;
-
+  height: 100%;
 }
 
 body::-webkit-scrollbar {

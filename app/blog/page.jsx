@@ -1,6 +1,5 @@
 import { getPosts, getPostsBySearch } from "@/config/contentful/client";
 import BlogPosts from "@/components/Blog/BlogPosts";
-import styles from "@/styles/blog.module.css";
 
 export const metadata = {
   title: "Blog - From Puglia",
@@ -12,9 +11,12 @@ export const metadata = {
 };
 
 export default async function Blog({ searchParams }) {
-  const cityQuery = searchParams.city
-    ? "city" + searchParams.city.split(" ").join("")
-    : null;
+  //the city param can hold multiple cities, comma separated
+  const cityQueries = searchParams.city
+    ? searchParams.city
+        .split(",")
+        .map((city) => "city" + city.split(" ").join(""))
+    : [];
   const categoryQuery = searchParams.category
     ? "category" + searchParams.category.split(" ").join("")
     : null;
@@ -25,12 +27,8 @@ export default async function Blog({ searchParams }) {
   if (searchQuery) {
     posts = await getPostsBySearch(searchQuery);
   } else {
-    posts = await getPosts(categoryQuery, cityQuery);
+    posts = await getPosts(categoryQuery, cityQueries);
   }
 
-  return (
-    <div className={styles.blog}>
-      <BlogPosts posts={posts.items} />
-    </div>
-  );
+  return <BlogPosts posts={posts.items} />;
 }

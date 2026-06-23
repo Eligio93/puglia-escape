@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 
 export default function Header() {
   return (
-    <header className="bg-sand text-dark-blue font-dm-sans sticky top-0 right-0 z-10 flex h-[50px] items-center justify-between md:h-[60px] lg:h-[70px] lg:px-10">
+    <header className="bg-warm-cream text-dark-blue font-dm-sans sticky top-0 right-0 z-10 flex h-[50px] items-center justify-between md:h-[60px] lg:h-[70px] lg:px-10">
       <Link href="/" className="flex h-full w-auto justify-center p-1">
         <Image
           src={pugliaProjectLogo}

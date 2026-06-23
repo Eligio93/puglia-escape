@@ -4,34 +4,19 @@ export const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 })
-//get all posts and in case filter them by category and city
-export async function getPosts(category = null, city = null) {
-    if (!category && !city) {
-        const response = await client.getEntries({ content_type: 'blogPost', order: '-sys.createdAt' })
-        return response
-    } else if (category && city) {
-        const response = await client.getEntries({
-            content_type: 'blogPost',
-            'metadata.tags.sys.id[all]': [category, city],
-            order: '-sys.createdAt'
-        })
-        return response
-    } else if (city) {
-        const response = await client.getEntries({
-            content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [city],
-            order: '-sys.createdAt'
-        })
-        return response
-    } else if (category) {
-        const response = await client.getEntries({
-            content_type: 'blogPost',
-            'metadata.tags.sys.id[in]': [category],
-            order: '-sys.createdAt'
-        })
-        return response
+//get all posts and in case filter them by category and one or more cities
+export async function getPosts(category = null, cities = []) {
+    const query = { content_type: 'blogPost', order: '-sys.createdAt' }
+    //a post must have the selected category (AND)
+    if (category) {
+        query['metadata.tags.sys.id[all]'] = [category]
     }
-
+    //a post must belong to any of the selected cities (OR among cities)
+    if (cities && cities.length) {
+        query['metadata.tags.sys.id[in]'] = cities
+    }
+    const response = await client.getEntries(query)
+    return response
 }
 //get tags to set Categories and Cities
 export async function getTags() {
